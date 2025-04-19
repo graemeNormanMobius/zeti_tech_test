@@ -1,0 +1,212 @@
+/**
+  Form switch
+*/
+.customElementSwitch {
+  padding: var(--spacing-3) var(--spacing-7) var(--spacing-4) var(--spacing-7);
+
+  .form-switch {
+    display: inline-flex;
+  }
+
+  .form-check-label {
+    /** The same as size bodySmall **/
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.42px;
+    margin: var(--spacing-2) 0 0 var(--spacing-4);
+    text-transform: none;
+  }
+
+  .form-check-input,
+  .form-check-input:checked {
+    height: 24px;
+    width: 54px;
+  }
+
+  .form-check-input:checked {
+    background-color: var(--background-highlight);
+  }
+}
+
+/**
+  Custom Form
+ */
+.customForm,
+.mcForm {
+  /*.formDescription {*/
+  /*  color: var(--foreground-neutral-faded);*/
+  /*  margin: 0 0 var(--spacing-7);*/
+  /*}*/
+
+  /*.preloadedFormData {*/
+  /*  .dataBlock {*/
+  /*    display: inline-flex;*/
+  /*    flex-direction: column;*/
+  /*    margin: 0 0 var(--spacing-5);*/
+  /*    width: 100%;*/
+
+  /*    .data,*/
+  /*    .dataType {*/
+  /*      color: var(--foreground-neutral);*/
+  /*      width: 100%;*/
+  /*    }*/
+  /*  }*/
+  /*}*/
+
+  .form-group {
+    padding: 0 0 var(--spacing-4) 0;
+    position: relative;
+
+    .form-label {
+      display: inline-flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .count {
+        color: var(--foreground-placeholder);
+      }
+      .count.over-limit {
+        color: var(--foreground-negative);
+      }
+    }
+
+    input.visibilityToggle {
+      width: 92%;
+    }
+    .inputToggle {
+      position: absolute;
+      right: 6px;
+      top: 33px;
+    }
+  }
+
+  /**
+    Form elements in modal (shouldn't be themed!!)
+   */
+  /*.modal-content {*/
+  /*  .customForm {*/
+  /*    .form-select {*/
+  /*      border-radius: var(--radius-m);*/
+  /*      border: 1px solid #ededf2;*/
+  /*      background-color: #ffffff;*/
+  /*      color: #5a5a69;*/
+  /*    }*/
+  /*  }*/
+  /*}*/
+
+  /**
+    Button Group
+   */
+  .modal-buttonGroup {
+    display: inline-flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  /**
+    Form errors
+   */
+  .formErrorContainer {
+    align-items: flex-end;
+    color: var(--foreground-negative);
+    display: flex;
+    margin: var(--spacing-2) 0 0;
+
+    .formErrorIcon {
+      margin: 0 var(--spacing-3) 0 0;
+    }
+    span {
+      color: var(--foreground-negative);
+    }
+  }
+
+  /**
+    Form elements (Bootstrap overrides)
+   */
+  .form-label {
+    color: var(--foreground-neutral);
+    text-transform: none;
+    margin: 0 0 var(--spacing-2);
+  }
+  .form-control {
+    border-radius: var(--radius-m) !important;
+    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05) !important;
+  }
+}
+/**
+  Sign-in form
+ */
+.signInPage {
+  align-items: center;
+  background: var(--background-base);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+
+  .signInFormContainer {
+    border-radius: var(--radius-l);
+    border: 1px solid var(--border-neutral-faded);
+    box-shadow: var(--shadow-l);
+    padding: var(--spacing-9);
+    width: 550px;
+
+    .signInLogo {
+      color: var(--foreground-neutral);
+      margin: 0 0 var(--spacing-9);
+      width: 177px;
+    }
+    .heading {
+      color: var(--foreground-neutral);
+      padding: 0 0 var(--spacing-3);
+      margin: 0;
+    }
+    .subHeading {
+      color: var(--foreground-neutral);
+      padding: 0;
+    }
+
+    .signInForm {
+      margin: var(--spacing-9) 0 0;
+
+      .form-group {
+        &:first-of-type {
+          padding: 0 0 var(--spacing-5);
+        }
+        &:last-of-type {
+          padding: 0;
+        }
+        .inputToggle {
+          right: 0;
+        }
+      }
+    }
+    .modal-buttonGroup {
+      justify-content: flex-start;
+      margin: var(--spacing-9) 0 0;
+    }
+  }
+
+  .forgotPassword,
+  .forgotPasswordGoBack {
+    padding: var(--spacing-8) 0 0;
+    width: 550px;
+
+    .goBack {
+      margin: 0 var(--spacing-2) 0 0;
+    }
+
+    .reset {
+      margin: 0 0 0 var(--spacing-2);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .forgotPasswordGoBack {
+    margin: 0 0 var(--spacing-3) 0;
+  }
+}

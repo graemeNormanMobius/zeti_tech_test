@@ -26,6 +26,7 @@ Components
 Generic styles
 **/
 @import './styles/generic.css';
+@import './styles/forms.css';
 
 /**
 Macro Layouts

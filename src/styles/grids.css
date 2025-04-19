@@ -18,6 +18,16 @@
 
     @media only screen and (max-width: 48rem) { /* 768px */
         .gridContainer {
+            /**
+                Login
+            **/
+            .login {
+                grid-column: span 12;
+                grid-row: auto;
+            }
+            /**
+                Dashboard
+            **/
             .dashboardSummary {
                 grid-column: span 12;
                 grid-row: auto;
@@ -47,6 +57,17 @@
 
     @media only screen and (min-width: 48rem) { /* 768px */
         .gridContainer {
+            /**
+                Login
+            **/
+            .login {
+                grid-column-start: 4;
+                grid-column-end: span 6;
+                grid-row: auto;
+            }
+            /**
+                Dashboard
+            **/
             .dashboardSummary {
                 grid-column: span 12;
                 grid-row: auto;
