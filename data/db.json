@@ -1,7 +1,6 @@
 {
   "users": [
-    { "id": 1, "name": "Alice" },
-    { "id": 2, "name": "Bob" }
+    { "id": 1, "firstname": "Graeme", "surname": "Norman", "email": "gnorman85@googlemail.com", "password": "password123" }
   ],
   "posts": [
     { "id": 1, "title": "Hello World", "authorId": 1 }
