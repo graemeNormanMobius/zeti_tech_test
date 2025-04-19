@@ -1,0 +1,201 @@
+.mcBtn {
+  align-items: center;
+  border: none;
+  border-radius: var(--radius-m) !important;
+  display: inline-flex;
+  justify-content: center;
+  transition: 0.3s;
+
+  .showInfo {
+    display: inline-flex;
+  }
+
+  &::after {
+    display: none !important;
+  }
+}
+
+/**
+  Sizes
+ */
+.mcBtn.size-sm {
+  padding: var(--spacing-3) var(--spacing-4) !important;
+}
+.mcBtn.size-md {
+  padding: var(--spacing-4) var(--spacing-5) !important;
+}
+.mcBtn.size-lg {
+  padding: var(--spacing-4) var(--spacing-6) !important;
+}
+.mcBtn.size-xl {
+  padding: var(--spacing-5) var(--spacing-7) !important;
+}
+
+/**
+  State
+ */
+.mcBtn.state-disabled {
+  background: var(--background-disabled) !important;
+  color: var(--foreground-disabled) !important;
+
+  &:hover {
+    background: var(--background-disabled) !important;
+    color: var(--foreground-disabled) !important;
+    cursor: not-allowed;
+  }
+}
+
+/**
+  Type
+ */
+.mcBtn.type-accent {
+  background: var(--background-accent);
+  color: var(--foreground-neutral-on-accent);
+
+  &:hover {
+    background: var(--background-accent-hover);
+  }
+  &:focus {
+    background: var(--background-accent-focus);
+  }
+  &:disabled {
+    background: var(--background-disabled);
+    color: var(--foreground-disabled);
+  }
+}
+.mcBtn.type-primary {
+  background: var(--background-primary);
+  color: var(--foreground-inverse);
+
+  &:hover {
+    background: var(--background-primary-hover);
+  }
+  &:focus {
+    background: var(--background-primary-focus);
+  }
+  &:disabled {
+    background: var(--background-disabled);
+    color: var(--foreground-disabled);
+  }
+}
+.mcBtn.type-secondary {
+  background: var(--background-secondary);
+  color: var(--foreground-neutral);
+
+  &:hover {
+    background: var(--background-secondary-hover);
+  }
+  &:focus {
+    background: var(--background-secondary-focus);
+  }
+  &:disabled {
+    background: var(--background-disabled);
+    color: var(--foreground-disabled);
+  }
+}
+.mcBtn.type-ghost {
+  background: transparent;
+  color: var(--foreground-neutral);
+
+  &:hover {
+    background: var(--background-secondary-hover);
+    color: var(--foreground-neutral-faded);
+  }
+  &:focus {
+    background: var(--background-secondary-focus);
+    color: var(--foreground-neutral-faded);
+  }
+  &:disabled {
+    background: var(--background-disabled);
+    color: var(--foreground-disabled);
+  }
+}
+.mcBtn.type-ghostSecondary {
+  background: transparent;
+  color: var(--foreground-icon-faded);
+
+  &:hover {
+    background: var(--background-secondary-hover);
+    color: var(--foreground-neutral-faded);
+  }
+  &:focus {
+    background: var(--background-secondary-focus);
+    color: var(--foreground-neutral-faded);
+  }
+  &:disabled {
+    background: var(--background-disabled);
+    color: var(--foreground-disabled);
+  }
+}
+.mcBtn.type-destructive {
+  background: var(--background-negative);
+  color: var(--foreground-neutral-on-accent);
+
+  &:hover {
+    background: var(--background-negative-hover);
+    color: var(--foreground-neutral-on-accent);
+  }
+  &:focus {
+    background: var(--background-negative-focus);
+    color: var(--foreground-neutral-on-accent);
+  }
+  &:disabled {
+    background: var(--background-disabled);
+    color: var(--foreground-disabled);
+  }
+}
+
+/**
+  HasIcon
+ */
+.mcBtn.hasIcon-leading {
+  flex-direction: row;
+
+  .showInfo:not(.iconOnly) {
+    margin: 0 var(--spacing-2) 0 0;
+  }
+}
+.mcBtn.hasIcon-trailing {
+  flex-direction: row-reverse;
+
+  .showInfo:not(.iconOnly) {
+    margin: 0 0 0 var(--spacing-2);
+  }
+}
+
+/**
+  Icon only
+ */
+.mcBtn.iconOnly.size-sm {
+  height: 32px;
+  width: 32px;
+}
+.mcBtn.iconOnly.size-md {
+  height: 40px;
+  width: 40px;
+}
+.mcBtn.iconOnly.size-lg {
+  height: 48px;
+  width: 48px;
+}
+.mcBtn.iconOnly.size-xl {
+  height: 56px;
+  width: 56px;
+}
+
+/**
+  Button groups
+ */
+.mcButtonGroup {
+  display: inline-flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  .mcBtn {
+    margin: 0 var(--spacing-2) 0 0;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.customNotification {
+  align-items: flex-start;
+  background: var(--background-faded);
+  border-top-right-radius: var(--radius-m);
+  border-bottom-right-radius: var(--radius-m);
+  display: inline-flex;
+  flex-direction: row;
+  padding: var(--spacing-4);
+  width: 100%;
+
+  .notificationContent {
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+
+    .heading {
+      text-transform: none;
+    }
+    .content {
+      margin: 0;
+    }
+    .ctaButton {
+      position: absolute;
+      right: 0;
+      top: 10px;
+    }
+  }
+
+  .iconContainer {
+    bottom: 1px;
+    display: inline-flex;
+    margin: 0 var(--spacing-3) 0 0;
+    position: relative;
+  }
+  .icon-neutral {
+    color: var(--foreground-neutral);
+  }
+  .icon-success {
+    color: var(--border-success);
+  }
+  .icon-danger {
+    color: var(--border-negative);
+  }
+  .icon-warning {
+    color: var(--border-warning);
+  }
+  .icon-info {
+    color: var(--border-info);
+  }
+}
+.type-neutral {
+  border-left: 4px solid var(--background-faded);
+}
+.type-success {
+  border-left: 4px solid var(--border-success);
+}
+.type-danger {
+  border-left: 4px solid var(--border-negative);
+}
+.type-warning {
+  border-left: 4px solid var(--border-warning);
+}
+.type-info {
+  border-left: 4px solid var(--border-info);
+}

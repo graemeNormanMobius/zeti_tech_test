@@ -1,8 +1,18 @@
 .summaryBlockContainer {
     display: inline-flex;
-    flex-direction: row;
     justify-content: space-between;
     margin: var(--spacing-5) 0 0;
+    width: 100%;
+}
+
+.summaryBlockContainer.dirrRow {
+    flex-direction: row;
+    gap: 0 var(--spacing-7);
+}
+
+.summaryBlockContainer.dirrCol {
+    flex-direction: column;
+    gap: var(--spacing-7) 0;
 }
 
 .summaryBlock {
@@ -10,7 +20,7 @@
     border: 1px solid var(--border-neutral);
     padding: var(--spacing-4);
     position: relative;
-    min-width: 40%;
+    width: 100%;
 
     .monthlyMilesTotal {
         bottom: 16px;

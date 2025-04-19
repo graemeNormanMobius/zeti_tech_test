@@ -1,0 +1,148 @@
+.chip {
+  align-items: center;
+  border-radius: var(--radius-m);
+  color: var(--foreground-neutral);
+  display: inline-flex;
+  margin: 0 var(--spacing-2) 0 0;
+  padding: var(--spacing-3) var(--spacing-4);
+  transition: 0.3s;
+
+  &:last-of-type {
+    margin: 0;
+  }
+}
+
+/**
+  Sizes
+ */
+.chip.size-sm {
+  padding: var(--spacing-3) var(--spacing-4);
+}
+.chip.size-md {
+  padding: var(--spacing-4) var(--spacing-5);
+}
+
+/**
+  Style
+ */
+.chip.style-fill {
+  background: var(--background-secondary);
+  border: 1px solid var(--background-secondary);
+}
+.chip.style-border {
+  background: transparent;
+  border: 1px solid var(--border-secondary);
+}
+
+/**
+  HasIcon
+ */
+.chip.hasIcon-leading,
+.chip.hasIcon-trailing:is(.showCount-true) {
+  flex-direction: row;
+
+  .showInfo {
+    margin: 0 var(--spacing-2) 0 0;
+  }
+}
+.chip.hasIcon-trailing:not(.showCount-true) {
+  flex-direction: row-reverse;
+
+  .showInfo {
+    margin: 0 0 0 var(--spacing-2);
+  }
+}
+
+/**
+  Show Count
+ */
+.chip.showCount-true {
+  flex-direction: row;
+
+  .showCountInfo {
+    color: var(--foreground-neutral-faded);
+    margin: 0 0 0 var(--spacing-2);
+  }
+}
+
+/**
+  State (with style FILL)
+ */
+.chip.style-fill.state-default {
+  background: var(--background-faded);
+  border: 1px solid var(--background-faded);
+
+  &:hover {
+    background: var(--background-faded-hover);
+    cursor: pointer;
+  }
+  &:focus {
+    background: var(--background-faded-focus);
+    color: var(--foreground-neutral);
+    cursor: default;
+  }
+  &:active {
+    background: var(--background-secondary-active);
+    color: var(--foreground-inverse);
+    cursor: default;
+  }
+}
+
+.chip.style-fill.state-active {
+  background: var(--background-secondary-active);
+  color: var(--foreground-inverse);
+  cursor: default;
+}
+
+.chip.style-fill.state-disabled {
+  background: var(--background-disabled);
+  color: var(--foreground-disabled);
+
+  &:hover {
+    cursor: not-allowed;
+  }
+}
+
+/**
+  State (with style BORDER)
+ */
+.chip.style-border.state-default {
+  border: 1px solid var(--border-secondary);
+
+  &:hover {
+    border: 1px solid var(--border-secondary-hover);
+    cursor: pointer;
+  }
+  &:focus {
+    border: 1px solid var(--border-secondary-focus);
+    cursor: default;
+  }
+  &:active {
+    border: 1px solid var(--border-secondary-active);
+    cursor: default;
+  }
+}
+
+.chip.style-border.state-disabled {
+  border: 1px solid var(--border-disabled);
+  color: var(--foreground-disabled);
+
+  &:hover {
+    cursor: not-allowed;
+  }
+}
+
+/**
+  Multiple chips when chip is wrapped in a React <Link>
+
+  E.g: Chips of Measure pages
+ */
+.chip-nav-wrapper {
+  /*margin: var(--spacing-4) 0 var(--spacing-4);*/
+
+  .chip-nav-link {
+    display: inline-flex;
+    margin: 0 var(--spacing-2) 0 0;
+    text-decoration: none;
+  }
+}
