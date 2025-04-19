@@ -1,0 +1,761 @@
+/**
+  General Grid Rule(s)
+**/
+.gridContainer {
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-flow: row;
+    grid-gap: 20px;
+    grid-auto-rows: minmax(100px, auto) auto;
+    /*padding: 0 0 35px;*/
+}
+
+/**
+  Activity Hub
+**/
+.activityHub {
+    .mainNav {
+        background: var(--background-base);
+    }
+
+    @media only screen and (min-width: 62rem) {
+        /**
+          Top 5 lists (Carbon / Energy Intensity)
+         */
+        .top-five-container {
+            align-items: center;
+            display: inline-flex;
+            width: 100%;
+
+            .section {
+                display: inline-flex;
+                justify-content: flex-start;
+                padding: var(--spacing-3) 0;
+
+                .assetLink {
+                    text-decoration: none;
+                }
+            }
+            .section-1 {
+                flex: 0 0 11%;
+            }
+            .section-2 {
+                /*flex: 0 0 69%;*/
+                flex: 0 0 77%;
+            }
+            .section-3 {
+                /*flex: 0 0 20%;*/
+                flex: 0 0 12%;
+                flex-direction: column;
+
+                .miniStat {
+                    color: var(--foreground-neutral);
+                }
+            }
+        }
+        .top-five-container.fourCol {
+            .section-1 {
+                flex: 0 0 49px;
+            }
+            .section-2 {
+                flex: 0 0 62%;
+            }
+            .section-3 {
+                flex: 0 0 20%;
+            }
+            .section-4 {
+                flex: 0 0 10%;
+                justify-content: flex-end;
+            }
+        }
+
+        /**
+          CSS Grid container(s)
+         */
+        .gridContainer {
+            .userSummary {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+            .dataGov {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+            .mobLatAct {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+            .mobBenchmark {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+            .mobCarbInt {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+            .mobEngInt {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+            .mobCVAR {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 75rem) {
+        .gridContainer {
+            .userSummary {
+                grid-column: span 4;
+                grid-row: 1 / 2;
+            }
+            .dataGov {
+                grid-column: span 4;
+                grid-row: 2 / 4;
+            }
+            .mobLatAct {
+                grid-column: span 4;
+                grid-row: 4 / 7;
+            }
+            .mobBenchmark {
+                grid-column: span 8;
+                grid-row: 1 / 2;
+            }
+            .mobCarbInt {
+                grid-column: span 4;
+                grid-row: 4 / 7;
+            }
+            .mobEngInt {
+                grid-column: span 4;
+                grid-row: 4 / 7;
+            }
+            .allocation {
+                /*grid-column: span 8;*/
+                grid-row: 7 / 9;
+                grid-column-start: 5;
+                grid-column-end: 13;
+                display: inline-flex;
+            }
+            .mobCVAR {
+                grid-column: span 8;
+                grid-row: 2 / 4;
+            }
+        }
+    }
+}
+
+/**
+  Asset Detail (ConsumptionData)
+**/
+.measure-overview {
+    @media only screen and (min-width: 62rem) {
+        .gridContainer {
+            .co2eCarbonIntensity {
+                grid-column: span 12;
+                grid-row: auto;
+            }
+
+            .totalEmissions {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+            .carbonIntensity {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+
+            .electricityMix {
+                grid-column: span 12;
+                grid-row: auto;
+            }
+
+            .highestContributing {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+            .sectorContributions {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+
+            .occupancy {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+            .occupancyPropertyType {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 75rem) {
+        .gridContainer {
+            .separatorHeading-test {
+                border: 1px solid red;
+            }
+        }
+    }
+}
+
+/**
+  Measure (Overview)
+**/
+.measure-overview {
+    @media only screen and (min-width: 62rem) {
+        .gridContainer {
+            .electricity {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+            .carbonIntensity {
+                grid-column: span 12;
+                grid-row: auto;
+            }
+            .carbonIntensityBreakdown {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+            .energyIntensityBreakdown {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+        }
+    }
+}
+
+/**
+  Measure (Consumption)
+**/
+.measure-consumption {
+    @media only screen and (min-width: 62rem) {
+        .gridContainer {
+            .electricity {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+            .energyIntensity {
+                grid-column: span 12;
+                grid-row: auto;
+            }
+            .electricityMix {
+                grid-column: span 12;
+                grid-row: auto;
+            }
+        }
+    }
+}
+
+/**
+  Asset Detail (Overview)
+**/
+.measure-assetOverview {
+    @media only screen and (min-width: 62rem) {
+        .gridContainer {
+            .heroChart {
+                grid-column: span 6;
+                grid-row: 1 / 4;
+            }
+            .dataGovAsset {
+                grid-column: span 6;
+                grid-row: 1 / 4;
+            }
+            .perfMet {
+                grid-column: span 6;
+                grid-row: 4 / 5;
+            }
+        }
+        /** Asset Stats **/
+        .gridContainer.assetStats {
+            grid-auto-rows: minmax(auto, auto) auto;
+
+            .assetStat-one {
+                grid-column: span 3;
+                grid-row: 1 / 1;
+                margin-right: var(--spacing-4);
+            }
+            .assetStat-two {
+                grid-column: span 3;
+                grid-row: 1 / 1;
+                margin-right: var(--spacing-4);
+            }
+            .assetStat-three {
+                grid-column: span 3;
+                grid-row: 1 / 1;
+                margin-right: var(--spacing-4);
+            }
+            .assetStat-four {
+                grid-column: span 3;
+                grid-row: 1 / 1;
+            }
+        }
+
+        .gridContainer.assetPageHeader {
+            padding: var(--spacing-8) 0 0 0;
+
+            .assetHeaderDetails {
+                grid-column: span 12;
+                grid-row: 1 / 1;
+            }
+        }
+
+        .gridContainer.optimisation {
+            .predCostSaving {
+                grid-column: span 4;
+                grid-row: 1 / 1;
+            }
+            .projects {
+                grid-column: span 4;
+                grid-row: 1 / 1;
+            }
+            .targets {
+                grid-column: span 4;
+                grid-row: 1 / 1;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 75rem) {
+        .assetSummaryOuterGrid {
+            display: inline-flex;
+            flex-direction: row;
+
+            .chartViews {
+                /*border: 1px solid red;*/
+                margin: 0 10px 0 0;
+                width: 70%;
+            }
+            .summaryBreakdown {
+                /*border: 1px solid blue;*/
+                margin: 0 0 0 10px;
+                width: 30%;
+            }
+        }
+
+        .gridContainer {
+            .energyIntensity {
+                grid-column: span 12;
+                grid-row: 1 / 2;
+            }
+            .carbonIntensity {
+                grid-column: span 12;
+                grid-row: 2 / 4;
+            }
+            .totalEmissions {
+                grid-column: span 12;
+                grid-row: 4 / 6;
+            }
+            /*.heroChart {*/
+            /*  grid-column: span 8;*/
+            /*  grid-row: 8 / 12;*/
+            /*}*/
+
+            .assetMobiusBenchmarks {
+                grid-column: span 12;
+                grid-row: 1 / 2;
+            }
+
+            .assetDataGovAsset {
+                grid-column: span 12;
+                grid-row: 2 / 3;
+            }
+            .perfMet {
+                grid-column: span 12;
+                grid-row: 3 / 5;
+            }
+        }
+    }
+}
+
+/**
+  Asset Detail (ConsumptionData)
+**/
+.measure-consumptionData {
+    @media only screen and (min-width: 62rem) {
+        .gridContainer {
+            /*.carbonIntensity {*/
+            /*  grid-column: span 12;*/
+            /*  grid-row: auto;*/
+            /*}*/
+            /*.totalEmissions {*/
+            /*  grid-column: span 6;*/
+            /*  grid-row: auto;*/
+            /*}*/
+            /*.carbonIntensityYrOnYr {*/
+            /*  grid-column: span 6;*/
+            /*  grid-row: auto;*/
+            /*}*/
+
+            .electricity {
+                grid-column: span 4;
+                grid-row: auto;
+            }
+            .electricityMix {
+                grid-column: span 4;
+                grid-row: auto;
+            }
+            .gas {
+                grid-column: span 4;
+                grid-row: auto;
+            }
+            .wasteManagement {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+            .waterUsage {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+
+            /*.dayAndNight {*/
+            /*  grid-column: span 4;*/
+            /*  grid-row: auto;*/
+            /*}*/
+            /*.energyIntensity {*/
+            /*  grid-column: span 4;*/
+            /*  grid-row: auto;*/
+            /*}*/
+            /*.electricityMix {*/
+            /*  grid-column: span 4;*/
+            /*  grid-row: auto;*/
+            /*}*/
+
+            /*.wasteManagement {*/
+            /*  grid-column: span 6;*/
+            /*  grid-row: auto;*/
+            /*}*/
+            /*.waterConsumption {*/
+            /*  grid-column: span 6;*/
+            /*  grid-row: auto;*/
+            /*}*/
+
+            /*.rate {*/
+            /*  grid-column: span 6;*/
+            /*  grid-row: auto;*/
+            /*}*/
+            /*.spaceAllocation {*/
+            /*  grid-column: span 6;*/
+            /*  grid-row: auto;*/
+            /*}*/
+        }
+    }
+
+    @media only screen and (min-width: 75rem) {
+        .gridContainer {
+            .separatorHeading-test {
+                border: 1px solid red;
+            }
+        }
+    }
+}
+
+/**
+  Asset Detail (ConsumptionData)
+**/
+.measure-analyse {
+    @media only screen and (min-width: 62rem) {
+        .gridContainer {
+            .test1 {
+                grid-column: span 12;
+                grid-row: auto;
+            }
+            .test2 {
+                grid-column: span 4;
+                grid-row: auto;
+            }
+            .test3 {
+                grid-column: span 4;
+                grid-row: auto;
+            }
+            .test4 {
+                grid-column: span 4;
+                grid-row: auto;
+            }
+        }
+    }
+
+    /*@media only screen and (min-width: 87.5rem) {*/
+    @media only screen and (min-width: 75rem) {
+        .gridContainer {
+            .test1 {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+            .test2 {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+            .test3 {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+            .test4 {
+                grid-column: span 6;
+                grid-row: auto;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 87.5rem) {
+        .gridContainer {
+            .test1 {
+                /*grid-column: span 3;*/
+                grid-column: span 12;
+                grid-row: auto;
+            }
+            .test2 {
+                grid-column: span 3;
+                grid-row: auto;
+            }
+            .test3 {
+                grid-column: span 3;
+                grid-row: auto;
+            }
+            .test4 {
+                grid-column: span 3;
+                grid-row: auto;
+            }
+        }
+    }
+}
+
+/**
+  Asset Detail (Overview)
+**/
+.industry-benchmark,
+.portfolio-benchmark {
+    @media only screen and (min-width: 62rem) {
+        .gridContainer {
+            /*grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;*/
+            /*grid-auto-flow: column;*/
+            /*grid-gap: 20px;*/
+            /*grid-auto-rows: minmax(100px, auto) auto;*/
+
+            .indBen,
+            .portBen {
+                grid-column: span 12;
+                grid-row: 1 / 3;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 75rem) {
+        .gridContainer {
+        }
+    }
+}
+
+/**
+  Asset Detail (Overview) / CRREM Breakdown (sub-pages)
+**/
+.measure-climateRisk,
+.measure-summary,
+.measure-assetStranded,
+.measure-carbonCostExcessEmissions,
+.measure-excessEmissionsFloorArea,
+.measure-costOfRetrofitting {
+    @media only screen and (min-width: 62rem) {
+        .gridContainer {
+            .carbonRiskEstateMonitor {
+                grid-column: span 12;
+                grid-row: 1 / 2;
+            }
+
+            .valueAtRisk {
+                grid-column: span 4;
+                grid-row: 1 / 1;
+            }
+
+            .phyCliRisk {
+                grid-column: span 12;
+                grid-row: 3 / 4;
+            }
+
+            /**
+              CRREM chart grid definition
+             */
+            .assetStranded {
+                grid-column: span 12;
+                grid-row: 1 / 2;
+            }
+
+            .costExcessEmissions {
+                grid-column: span 12;
+                grid-row: 1 / 2;
+            }
+
+            .excessEmissionsFloorArea {
+                grid-column: span 12;
+                grid-row: 1 / 2;
+            }
+
+            .costOfRetrofitting {
+                grid-column: span 12;
+                grid-row: 1 / 2;
+            }
+
+            /**
+              About CRREM
+             */
+            .aboutCrrem {
+                grid-column: span 12;
+                grid-row: 1 / 2;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 75rem) {
+        .gridContainer {
+        }
+    }
+}
+
+/**
+  Asset Detail (Overview)
+**/
+.measure-assetDetails {
+    @media only screen and (min-width: 62rem) {
+        .gridContainer {
+            .assetDetailsSummary {
+                grid-column: span 8;
+                grid-row: 1 / 1;
+            }
+
+            .assetDetailsBuildingInfo {
+                grid-column: span 8;
+                grid-row: 2 / 2;
+            }
+
+            .assetDetailsContacts {
+                grid-column: span 8;
+                grid-row: 3 / 4;
+            }
+
+            .assetDetailsChangeRequest {
+                grid-column: span 8;
+                grid-row: 4 / 5;
+            }
+
+            .assetDetailsIdRef {
+                grid-column: span 8;
+                grid-row: 5 / 6;
+
+                span {
+                    color: var(--foreground-neutral-faded);
+                }
+            }
+
+            .assetDetailsLocation {
+                grid-column: span 4;
+                grid-row: 1 / 4;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 75rem) {
+        .gridContainer {
+        }
+    }
+}
+
+/**
+  Asset Detail (Overview)
+**/
+.measure-assetVault {
+    @media only screen and (min-width: 62rem) {
+        .gridContainer {
+            .assetVaultPlaceholder {
+                grid-column: span 12;
+                grid-row: 1 / 2;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 75rem) {
+        .gridContainer {
+        }
+    }
+}
+
+/**
+  Projects (Top Level Page)
+**/
+.projects-projects {
+    @media only screen and (min-width: 62rem) {
+        .gridContainer {
+            .projectsPlaceholder {
+                grid-column: span 12;
+                grid-row: 1 / 2;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 75rem) {
+        .gridContainer {
+        }
+    }
+}
+
+/**
+  Vault (Top Level Page)
+**/
+.vault-vault {
+    @media only screen and (min-width: 62rem) {
+        .gridContainer {
+            .vaultPlaceholder {
+                grid-column: span 12;
+                grid-row: 1 / 2;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 75rem) {
+        .gridContainer {
+        }
+    }
+}
+
+/**
+  Tenants (Top Level Page)
+**/
+.tenants {
+    @media only screen and (min-width: 62rem) {
+        .gridContainer {
+            .tenantPlaceholder {
+                grid-column: span 12;
+                grid-row: 1 / 2;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 75rem) {
+        .gridContainer {
+        }
+    }
+}
+
+/**
+  Organisation / User Account pages
+ */
+.contentArea {
+    section {
+        margin: 0 0 var(--spacing-9) 0;
+
+        .sectionHeader {
+            border: 1px solid var(--border-neutral-faded);
+            padding: var(--spacing-6);
+        }
+        .sectionContent {
+            border-right: 1px solid var(--border-neutral-faded);
+            border-bottom: 1px solid var(--border-neutral-faded);
+            border-left: 1px solid var(--border-neutral-faded);
+            padding: var(--spacing-6);
+        }
+        .sectionContent.no-header {
+            border-top: 1px solid var(--border-neutral-faded);
+        }
+    }
+    section:last-of-type {
+        margin: 0;
+    }
+}

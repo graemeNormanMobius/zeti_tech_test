@@ -1,0 +1,125 @@
+/**
+  NOTE:
+  Do not apply padding to any of these styles.
+
+  Padding should be added by appending an additional class matching the available
+  options listed in "globalSettings.css"
+ */
+
+.mcCard.highlight {
+    border-radius: var(--radius-m);
+    /*border: 1px solid var(--border-neutral-faded);*/
+    border: 1px solid var(--gray-700);
+    background-color: var(--neutral-black);
+    box-shadow: var(--shadow-l);
+    /*min-height: 380px;*/
+    padding: var(--spacing-8);
+    position: relative;
+    overflow: hidden;
+
+    /*background: var(--background-faded);*/
+    /*border-radius: var(--radius-m);*/
+    /*position: relative;*/
+    /*height: auto; !* 100%; *!*/
+}
+
+.mcCard.backgroundFaded {
+    background: var(--background-faded);
+    border-radius: var(--radius-m);
+    position: relative;
+    height: auto; /* 100%; */
+}
+
+.mcCard.backgroundFadedBoxShadow {
+    background: var(--background-neutral);
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow-xs);
+    position: relative;
+    height: auto; /* 100%; */
+}
+
+.mcCard.backgroundNeutral {
+    background: var(--background-neutral);
+    border-radius: var(--radius-m);
+    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+    position: relative;
+    height: auto; /* 100%; */
+}
+
+.mcCard.borderNeutralFaded {
+    background: var(--background-neutral);
+    border-radius: var(--radius-m);
+    border: 1px solid var(--border-neutral-faded);
+    position: relative;
+    height: auto; /* 100%; */
+}
+
+.mcCard.noBackground {
+    position: relative;
+    height: auto; /* 100%; */
+}
+
+.mcCard.displayCardHub {
+    background: none;
+    border: 1px solid var(--border-neutral-faded);
+    border-radius: var(--radius-m);
+    height: auto; /* 100%; */
+    min-height: 300px;
+    position: relative;
+}
+
+.standardCard {
+    animation: componentFadeIn 1.5s forwards;
+    display: flex;
+    flex-direction: column;
+    /*opacity: 0;*/
+
+    .cardContent {
+        margin: var(--spacing-7) 0 0;
+    }
+}
+
+/**
+  * Chart Card unavailable state
+**/
+.unavailableContainer {
+    position: relative;
+
+    .unavailable {
+        filter: blur(20px);
+        height: auto;
+        max-width: 100%;
+        opacity: 0.6;
+    }
+    .unavailableMessage {
+        position: absolute;
+        text-align: center;
+        top: 40%;
+        width: 100%;
+        z-index: 250;
+    }
+}
+
+/**
+  Activity Hub view option toggles
+ */
+.viewOptions {
+    display: inline-flex;
+    justify-content: space-between;
+    margin: 0 0 var(--spacing-3);
+    width: 100%;
+
+    .viewFilterOptions {
+        padding: var(--spacing-7) 0;
+
+        .select {
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border-secondary);
+            background-color: var(--background-neutral);
+            color: var(--foreground-neutral-faded);
+        }
+    }
+}
+.viewOptions.simple {
+    justify-content: flex-start;
+}

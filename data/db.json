@@ -1,0 +1,65 @@
+{
+  "users": [
+    { "id": 1, "name": "Alice" },
+    { "id": 2, "name": "Bob" }
+  ],
+  "posts": [
+    { "id": 1, "title": "Hello World", "authorId": 1 }
+  ],
+  "timestamps": [
+    {
+      "date": "2021-02-01",
+      "vehicles": [
+        {
+          "vin": "xyz12345",
+          "licensePlate": "86532 AZE",
+          "make": "Tesla",
+          "model": "3",
+          "state": {
+            "odometerInMeters": 48280320,
+            "speedInMph": 10.1,
+            "asAt": "2021-02-01T00:00:00+00:00"
+          }
+        },
+        {
+          "vin": "173hvidvde",
+          "licensePlate": "987 XWE",
+          "make": "Tesla",
+          "model": "3",
+          "state": {
+            "odometerInMeters": 43280320,
+            "speedInMph": 10.1,
+            "asAt": "2021-02-01T00:00:00+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2021-02-28",
+      "vehicles": [
+        {
+          "vin": "xyz12345",
+          "licensePlate": "86532 AZE",
+          "make": "Tesla",
+          "model": "3",
+          "state": {
+            "odometerInMeters": 51499008,
+            "speedInMph": 89,
+            "asAt": "2021-02-28T23:59:00+00:00"
+          }
+        },
+        {
+          "vin": "173hvidvde",
+          "licensePlate": "987 XWE",
+          "make": "Tesla",
+          "model": "3",
+          "state": {
+            "odometerInMeters": 47199008,
+            "speedInMph": 89,
+            "asAt": "2021-02-28T23:59:00+00:00"
+          }
+        }
+      ]
+    }
+  ]
+}

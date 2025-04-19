@@ -1,0 +1,19 @@
+.subHeader {
+    align-items: center;
+    color: var(--foreground-neutral);
+    display: inline-flex;
+    flex-direction: row;
+    margin: 0 0 var(--spacing-2) 0;
+    width: auto;
+
+    .showInfo {
+        display: inline-flex;
+        margin: 0 0 0 var(--spacing-2);
+    }
+    .info {
+        border: 1px solid red;
+        border-radius: var(--radius-full);
+        padding: var(--spacing-3);
+        color: var(--neutral-black);
+    }
+}

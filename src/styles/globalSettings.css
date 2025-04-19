@@ -1,0 +1,46 @@
+/**
+  Pre-defined spacing for cards / containers
+
+  NOTE: Please don't use this on anything other than high-level cards / containers
+        as if they change we COULD break a lot of things in the APP.
+
+        Let's not take that risk!! ;-)
+ */
+
+.spacing-xxs {
+  padding: var(--spacing-3);
+}
+.spacing-xs {
+  padding: var(--spacing-4);
+}
+.spacing-sm {
+  padding: var(--spacing-6);
+}
+.spacing-md {
+  padding: var(--spacing-7);
+}
+.spacing-lg {
+  padding: var(--spacing-8);
+}
+
+/**
+  Page Sections / titles / dividers
+**/
+.pageSection {
+  margin: var(--spacing-8) 0 0;
+
+  .sectionTitle {
+    display: inline-flex;
+    margin: 0 0 var(--spacing-4);
+  }
+}
+.sectionDivider {
+  border-top: 1px solid var(--border-neutral-faded);
+  height: 1px;
+  margin: var(--spacing-4) 0 var(--spacing-8); /* var(--spacing-5) 0; */
+}
+.sectionDivider.dashed {
+  border-top: 1px dashed var(--border-neutral-faded);
+  margin: 0;
+  width: 100%;
+}

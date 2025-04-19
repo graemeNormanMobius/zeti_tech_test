@@ -1,0 +1,138 @@
+.mainNav {
+    background: var(--background-base);
+    height: 100vh;
+    left: 0;
+    padding: var(--spacing-7) 0 0;
+    position: fixed;
+    top: 0;
+    width: 80px;
+    z-index: 1001;
+}
+
+.mainNav {
+    .companyLogo {
+        margin: 0 auto var(--spacing-6);
+        display: flex;
+        justify-content: center;
+
+        .navItem {
+            .logo {
+                border-radius: var(--radius-m);
+                color: var(--foreground-neutral);
+                height: 36px;
+                width: 36px;
+            }
+        }
+    }
+
+    .mainNavItems {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 145px);
+        justify-content: flex-start;
+        margin: 0;
+        position: relative;
+
+        .navItem {
+            margin: 0 auto var(--spacing-1);
+            padding: var(--spacing-3) var(--spacing-4);
+            transition: 0.3s;
+            max-height: 40px;
+            max-width: 40px;
+
+            .menuIcon {
+                height: 20px;
+                width: 20px;
+                position: relative;
+                right: 2px;
+                bottom: 1px;
+            }
+
+            &:hover {
+                background: var(--background-faded-hover);
+                border-radius: var(--radius-m);
+                cursor: pointer;
+            }
+
+            &:focus {
+                background: var(--background-faded-focus);
+                border-radius: var(--radius-m);
+                cursor: pointer;
+            }
+
+            &.active {
+                background: var(--background-secondary-active);
+                border-radius: var(--radius-m);
+                color: var(--foreground-inverse);
+            }
+
+            &.active {
+                background: var(--background-secondary-active);
+                border-radius: var(--radius-m);
+                color: var(--foreground-inverse);
+            }
+        }
+    }
+}
+
+
+
+/*.levelOneNav {*/
+/*    !*display: inline-flex;*!*/
+/*    margin: 0;*/
+/*    !*max-width: 95%;*!*/
+/*    !*height: fit-content; !* 36px; *!*!*/
+/*    z-index: 500;*/
+/*}*/
+/*.levelTwoNav {*/
+/*    padding: 0;*/
+/*    overflow: auto;*/
+/*    max-width: 85%;*/
+/*}*/
+
+/**
+  Sidebar Navigation
+ */
+/*.sidebarNavigation {*/
+/*    !*border: 1px solid red;*!*/
+/*    display: inline-flex;*/
+/*    flex-direction: column;*/
+
+/*    .title {*/
+/*        !*border: 1px solid blue;*!*/
+/*        margin: var(--spacing-4) 0 var(--spacing-6) 0;*/
+/*    }*/
+/*    .navItem-wrapper {*/
+/*        margin: 0 var(--spacing-3);*/
+
+/*        a {*/
+/*            display: inline-flex;*/
+/*            margin: 0 0 var(--spacing-2);*/
+/*            padding: var(--spacing-3) var(--spacing-4);*/
+/*            text-decoration: none;*/
+/*            width: 100%;*/
+/*        }*/
+/*        a:hover,*/
+/*        a.active {*/
+/*            background: var(--background-secondary);*/
+/*            border-radius: var(--radius-s);*/
+/*        }*/
+/*    }*/
+/*}*/
+
+/**
+  Header back link
+ */
+/*.appBackLink {*/
+/*    align-items: center;*/
+/*    display: inline-flex;*/
+/*    height: 50px;*/
+/*    position: relative;*/
+/*    bottom: 50px;*/
+
+/*    a {*/
+/*        text-decoration: none;*/
+/*    }*/
+/*}*/
+

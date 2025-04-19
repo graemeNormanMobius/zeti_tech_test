@@ -1,0 +1,87 @@
+/**
+Global Aspects
+**/
+@import './styles/bootstrap.min.css';
+@import './styles/theme.css';
+@import './styles/tokens.css';
+@import './styles/typography.css';
+@import './styles/globalSettings.css';
+
+/**
+Components
+**/
+@import './styles/components/cards.css';
+@import './styles/components/mainNav.css';
+@import './styles/components/tooltip.css';
+@import './styles/components/subHeader.css';
+@import './styles/components/summaryBlock.css';
+
+/**
+Macro Layouts
+**/
+@import './styles/macroLayouts/fullWidthContainer.css';
+
+/**
+CSS grid page definitions
+**/
+@import './styles/grids.css';
+
+
+html {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+body {
+    background: var(--background-neutral);
+    margin: 0;
+    height: 5000px;
+}
+.wrapper {
+    background: var(--background-base);
+    container-type: inline-size;
+    height: 100vh;
+}
+
+/*#root {*/
+/*  max-width: 1280px;*/
+/*  margin: 0 auto;*/
+/*  padding: 2rem;*/
+/*  text-align: center;*/
+/*}*/
+
+/*.logo {*/
+/*  height: 6em;*/
+/*  padding: 1.5em;*/
+/*  will-change: filter;*/
+/*  transition: filter 300ms;*/
+/*}*/
+/*.logo:hover {*/
+/*  filter: drop-shadow(0 0 2em #646cffaa);*/
+/*}*/
+/*.logo.react:hover {*/
+/*  filter: drop-shadow(0 0 2em #61dafbaa);*/
+/*}*/
+
+/*@keyframes logo-spin {*/
+/*  from {*/
+/*    transform: rotate(0deg);*/
+/*  }*/
+/*  to {*/
+/*    transform: rotate(360deg);*/
+/*  }*/
+/*}*/
+
+/*@media (prefers-reduced-motion: no-preference) {*/
+/*  a:nth-of-type(2) .logo {*/
+/*    animation: logo-spin infinite 20s linear;*/
+/*  }*/
+/*}*/
+
+/*.card {*/
+/*  padding: 2em;*/
+/*}*/
+
+/*.read-the-docs {*/
+/*  color: #888;*/
+/*}*/

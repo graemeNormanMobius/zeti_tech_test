@@ -1,0 +1,28 @@
+.summaryBlockContainer {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: var(--spacing-5) 0 0;
+}
+
+.summaryBlock {
+    border-radius: var(--radius-m);
+    border: 1px solid var(--border-neutral);
+    padding: var(--spacing-4);
+    position: relative;
+    min-width: 40%;
+
+    .monthlyMilesTotal {
+        bottom: 16px;
+        left: 100px;
+        position: absolute;
+    }
+}
+.summaryBlock.highlight {
+    border: 1px solid var(--gray-700);
+    background-color: var(--neutral-black);
+
+    .subHeader {
+        color: var(--neutral-white);
+    }
+}
