@@ -16,8 +16,10 @@ Components
 @import './styles/components/mainNav.css';
 @import './styles/components/tooltip.css';
 @import './styles/components/notification.css';
+@import './styles/components/accountMenu.css';
 @import './styles/components/loadingAnimations.css';
 @import './styles/components/subHeader.css';
+@import './styles/components/newDropdownMenu.css';
 @import './styles/components/summaryBlock.css';
 
 /**
@@ -44,7 +46,6 @@ html {
 body {
     background: var(--background-neutral);
     margin: 0;
-    height: 5000px;
 }
 .wrapper {
     background: var(--background-base);

@@ -83,3 +83,20 @@ export function InfoTooltipIcon({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export function VerticalDotsIcon({ className }: { className?: string }) {
+  return (
+      <svg
+          className={className}
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2m0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2m0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2"
+              fill="currentColor"
+        />
+    </svg>
+  );
+}

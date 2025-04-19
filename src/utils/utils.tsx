@@ -35,3 +35,10 @@ export function calculateMileageAndCostToDate(vehicleListOne: FleetTimestamp[], 
         };
     }) || [];
 }
+
+export function getInitials(name: string) {
+    const splitName = name.split(' ');
+
+    if (splitName.length === 1) return splitName[0][0];
+    return (splitName[0][0] + splitName[splitName.length - 1][0]).toUpperCase();
+}

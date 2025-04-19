@@ -5,7 +5,6 @@ import { RecentInvoices } from "../components/dashboard/recentInvoices.tsx";
 import { QuickActions } from "../components/dashboard/quickActions.tsx";
 
 export function Dashboard() {
-
     return (
         <div className="gridContainer">
             <div className='mcCard backgroundFadedBoxShadow spacing-md dashboardSummary'>

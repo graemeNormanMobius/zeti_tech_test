@@ -12,12 +12,6 @@ export function VehicleStatuses() {
     const [loading, setLoading] = useState(true);
     const today = getTodaysDate();
 
-    // console.log('today || today || today || today || today');
-    // console.log(today.toISOString());
-
-    // const currentDate = getTodayAsISODate();
-    // const firstOfCurrentMonth = getFirstOfCurrentMonth(today.toISOString());
-
     useEffect(() => {
         const currentDate = getTodayAsISODate();
         const firstOfCurrentMonth = getFirstOfCurrentMonth(today.toISOString());
