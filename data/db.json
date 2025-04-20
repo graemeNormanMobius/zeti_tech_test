@@ -1,7 +1,21 @@
 {
   "users": [
-    { "id": 1, "firstname": "Graeme", "surname": "Norman", "email": "gnorman85@googlemail.com", "password": "password123", "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804" },
-    { "id": 2, "firstname": "Test", "surname": "Tester", "email": "test@hotmail.com", "password": "123password", "clientId": "0eb3e1f1-be08-4a3f-bb32-395f51266114" }
+    {
+      "id": 1,
+      "firstname": "Graeme",
+      "surname": "Norman",
+      "email": "gnorman85@googlemail.com",
+      "password": "password123",
+      "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
+    },
+    {
+      "id": 2,
+      "firstname": "Test",
+      "surname": "Tester",
+      "email": "test@hotmail.com",
+      "password": "123password",
+      "clientId": "0eb3e1f1-be08-4a3f-bb32-395f51266114"
+    }
   ],
   "clients": [
     {
@@ -29,6 +43,7 @@
       "licensePlate": "CBDH 789",
       "make": "Jaguar",
       "model": "IPace",
+      "type": "electric",
       "state": null,
       "clientId": "0eb3e1f1-be08-4a3f-bb32-395f51266114"
     },
@@ -37,14 +52,16 @@
       "licensePlate": "86532 AZE",
       "make": "Tesla",
       "model": "3",
+      "type": "electric",
       "state": null,
       "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
     },
     {
       "vin": "173hvidvde",
-      "licensePlate": "987 XWE)",
+      "licensePlate": "987 XWE",
       "make": "Tesla",
       "model": "3",
+      "type": "electric",
       "state": null,
       "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
     }
@@ -58,42 +75,39 @@
           "licensePlate": "CBDH 789",
           "make": "Jaguar",
           "model": "IPace",
+          "type": "electric",
           "state": {
             "odometerInMeters": 789000,
             "speedInMph": 100,
             "asAt": "2021-02-01T00:00:00+00:00"
           },
-          "client": {
-            "clientId": "0eb3e1f1-be08-4a3f-bb32-395f51266114"
-          }
+          "clientId": "0eb3e1f1-be08-4a3f-bb32-395f51266114"
         },
         {
           "vin": "xyz12345",
           "licensePlate": "86532 AZE",
           "make": "Tesla",
           "model": "3",
+          "type": "electric",
           "state": {
             "odometerInMeters": 48280320,
             "speedInMph": 10.1,
             "asAt": "2021-02-01T00:00:00+00:00"
           },
-          "client": {
-            "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
-          }
+          "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
         },
         {
           "vin": "173hvidvde",
           "licensePlate": "987 XWE",
           "make": "Tesla",
           "model": "3",
+          "type": "electric",
           "state": {
             "odometerInMeters": 43280320,
             "speedInMph": 10.1,
             "asAt": "2021-02-01T00:00:00+00:00"
           },
-          "client": {
-            "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
-          }
+          "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
         }
       ]
     },
@@ -105,42 +119,39 @@
           "licensePlate": "CBDH 789",
           "make": "Jaguar",
           "model": "IPace",
+          "type": "electric",
           "state": {
             "odometerInMeters": 949934,
             "speedInMph": 30.7,
             "asAt": "2021-02-28T23:59:00+00:00"
           },
-          "client": {
-            "clientId": "0eb3e1f1-be08-4a3f-bb32-395f51266114"
-          }
+          "clientId": "0eb3e1f1-be08-4a3f-bb32-395f51266114"
         },
         {
           "vin": "xyz12345",
           "licensePlate": "86532 AZE",
           "make": "Tesla",
           "model": "3",
+          "type": "electric",
           "state": {
             "odometerInMeters": 51499008,
             "speedInMph": 89,
             "asAt": "2021-02-28T23:59:00+00:00"
           },
-          "client": {
-            "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
-          }
+          "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
         },
         {
           "vin": "173hvidvde",
           "licensePlate": "987 XWE",
           "make": "Tesla",
           "model": "3",
+          "type": "electric",
           "state": {
             "odometerInMeters": 47199008,
             "speedInMph": 89,
             "asAt": "2021-02-28T23:59:00+00:00"
           },
-          "client": {
-            "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
-          }
+          "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
         }
       ]
     }

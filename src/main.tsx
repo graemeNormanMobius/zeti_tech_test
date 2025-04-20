@@ -5,13 +5,16 @@ import './App.css'
 import App from './App.tsx'
 import ThemeProvider from "./context/themeContext.tsx";
 import { ModalProvider } from "./context/modalContext.tsx";
+import {VehicleProvider} from "./context/vehicleContext.tsx";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
       <ThemeProvider>
-          <ModalProvider>
-        <App />
-          </ModalProvider>
+          <VehicleProvider>
+              <ModalProvider>
+                <App />
+              </ModalProvider>
+          </VehicleProvider>
       </ThemeProvider>
   </StrictMode>,
 )

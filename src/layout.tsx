@@ -35,7 +35,7 @@ export function Layout() {
                     <div className="header">
                         <div className="header-fullWidthOpacity">&nbsp;</div>
                         <div className="component-section first">
-                            <span className="bodyMedEmp">Bob's Taxis by <ZetiLogo /></span>
+                            <span className="bodyMedEmp">Bob's Taxis powered by <ZetiLogo /></span>
                         </div>
                         <div className="component-section last">
                             <div className="topBarMenuItems">

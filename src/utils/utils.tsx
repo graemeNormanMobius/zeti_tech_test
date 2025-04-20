@@ -32,11 +32,19 @@ export function getFirstOfCurrentMonth(currentDate: any) {
 }
 
 export function calculateMileageAndCostToDate(vehicleListOne: FleetTimestamp[], vehicleListTwo: FleetTimestamp[]) {
-    // const metersInAMile = 1609.34;
-    // const costPerMile = 0.207 ;
+    const currentUsersClientId = getUserClientId();
 
-    return vehicleListOne[0]?.vehicles.map((vehicle: Vehicle, index: number) => {
-        const startOdometer = vehicleListTwo[0]?.vehicles[index]?.state?.odometerInMeters ?? 0;
+    console.log('vehicleListOne');
+    const filterOne = vehicleListOne.flatMap((entry: any) => entry.vehicles.filter((vehicle: any) => vehicle.clientId === currentUsersClientId.clientId))
+    console.log(filterOne);
+
+    console.log('vehicleListTwo');
+    const filterTwo = vehicleListTwo.flatMap((entry: any) => entry.vehicles.filter((vehicle: any) => vehicle.clientId === currentUsersClientId.clientId))
+    console.log(filterTwo);
+
+
+    return vehicleListOne.flatMap((entry: any) => entry.vehicles.filter((vehicle: any) => vehicle.clientId === currentUsersClientId.clientId)).map((vehicle: Vehicle, index: number) => {
+        const startOdometer = filterTwo[index]?.state?.odometerInMeters ?? 0;
         const endOdometer = vehicle?.state?.odometerInMeters ?? 0;
         const milesThisCalendarMonth = Math.round((endOdometer - startOdometer) / metersInAMile);
         const costThisCalendarMonth = (Math.round((endOdometer - startOdometer) / metersInAMile) * costPerMile);

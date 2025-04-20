@@ -22,6 +22,7 @@ Components
 @import './styles/components/newDropdownMenu.css';
 @import './styles/components/summaryBlock.css';
 @import './styles/components/modalWindow.css';
+@import './styles/components/vehicleCard.css';
 
 /**
 Generic styles

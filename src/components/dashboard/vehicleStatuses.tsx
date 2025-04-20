@@ -8,7 +8,7 @@ import { Vehicle } from "../../models/models.tsx";
 
 export function VehicleStatuses() {
     const { isDarkTheme } = useContext(ThemeContextV2);
-    const [vehicles, setVehicles] = useState<Vehicle[] | []>([]);
+    const [vehiclesTwo, setVehiclesTwo] = useState<Vehicle[] | []>([]);
     const [loading, setLoading] = useState(true);
     const today = getTodaysDate();
 
@@ -21,9 +21,12 @@ export function VehicleStatuses() {
 
         Promise.all([fetch1, fetch2])
             .then(([result1, result2]) => {
-                const currentMonthlyMiles = calculateMileageAndCostToDate(result1, result2);
+                const currentMonthlyMiles = calculateMileageAndCostToDate(
+                    result1,
+                    result2
+                );
 
-                setVehicles(currentMonthlyMiles);
+                setVehiclesTwo(currentMonthlyMiles);
                 setTimeout(() => {
                     setLoading(false);
                 }, 1500);
@@ -35,13 +38,13 @@ export function VehicleStatuses() {
             .finally(() => {
                 setLoading(false);
             });
-    }, [!vehicles.length]);
+    }, [!vehiclesTwo.length]);
 
     // useEffect(() => {
     //     fetch(`/api/timestamps?date=2021-02-28`)
     //         .then((res) => res.json())
     //         .then((data) => {
-    //             setVehicles(data[0].vehicles);
+    //             setVehiclesTwo(data[0].vehiclesTwo);
     //             setTimeout(() => {
     //                 setLoading(false);
     //             }, 1500);
@@ -50,7 +53,7 @@ export function VehicleStatuses() {
     //         .catch(() => {
     //             setLoading(false);
     //         });
-    // }, [!vehicles.length]);
+    // }, [!vehiclesTwo.length]);
 
     return (
         <div className="standardCard">
@@ -58,10 +61,10 @@ export function VehicleStatuses() {
                 value={'Vehicle Statuses'}
                 showInfo={true}
                 tooltipPlacement={'top'}
-                tooltipContent={`Quick view summary of individual vehicles`}
+                tooltipContent={`Quick view summary of fleet vehicles. Newly added vehicles will only appear once tracking starts (this may take a few days).`}
             />
 
-            {(!vehicles.length && !loading) && <StatusError message={'No vehicle statuses available currently'} />}
+            {(!vehiclesTwo.length && !loading) && <StatusError message={'No vehicle statuses available currently'} />}
 
             <div className="summaryBlockContainer dirrCol">
                 {loading && (
@@ -97,15 +100,15 @@ export function VehicleStatuses() {
                     </>
                 )}
 
-                {!loading && vehicles.length > 0 && vehicles.map((vehicle: Vehicle, index: number) => {
+                {!loading && vehiclesTwo.length > 0 && vehiclesTwo.map((vehicle: Vehicle, index: number) => {
                     return (
                         <div className="summaryBlock" key={index}>
                             <div className="bodyMedEmp">{vehicle.licensePlate}</div>
                             <div className="bodySmall">
-                                {vehicle.state.milesThisCalendarMonth ? vehicle.state.milesThisCalendarMonth + ' miles' : 'miles to be determined'}
+                                {vehicle.state?.milesThisCalendarMonth ? vehicle.state.milesThisCalendarMonth + ' miles' : 'miles to be determined'}
                             </div>
                             <div className="bodySmall">
-                                {vehicle.state.costThisCalendarMonth ? '£' + vehicle.state.costThisCalendarMonth.toFixed(2) : '-'}
+                                {vehicle.state?.costThisCalendarMonth ? '£' + vehicle.state.costThisCalendarMonth.toFixed(2) : '-'}
                             </div>
                         </div>
                     )

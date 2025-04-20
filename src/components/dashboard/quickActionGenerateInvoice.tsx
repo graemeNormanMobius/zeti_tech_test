@@ -70,8 +70,6 @@ export function QuickActionGenerateInvoice() {
             showModalTrigger={true}
             disableModalTrigger={false}
         >
-
-
             <form className="customForm" onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group">
                     <label className="form-label bodyXSmallEmp" htmlFor="emissionsFactor">
@@ -122,6 +120,7 @@ export function QuickActionGenerateInvoice() {
                         isSubmit={true}
                         value="Generate Invoice"
                     />
+
                 </div>
             </form>
         </ModalWindow>

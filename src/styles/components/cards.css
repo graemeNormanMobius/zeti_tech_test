@@ -74,6 +74,15 @@
     flex-direction: column;
     /*opacity: 0;*/
 
+    .cardIcon { height: 50px; width: 50px; }
+    .cardSubIcon {
+        height: 30px;
+        left: 45px;
+        position: absolute;
+        top: 15px;
+        width: 30px;
+    }
+
     .cardContent {
         margin: var(--spacing-7) 0 0;
     }

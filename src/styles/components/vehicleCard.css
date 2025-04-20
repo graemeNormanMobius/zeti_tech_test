@@ -1,0 +1,80 @@
+
+.filterView {
+    background: var(--background-neutral);
+    left: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.yourFleetVehicle {
+    .cardIcon {
+        color: var(--foreground-neutral);
+    }
+    .cardSubIcon {
+        color: var(--background-success);
+    }
+}
+
+.vehicleDetails {
+    border-top: 1px solid var(--border-neutral);
+    display: inline-flex;
+    flex-direction: column;
+    margin: var(--spacing-5) 0 0;
+    padding: var(--spacing-5) 0 0;
+
+    .detail {
+        background: var(--border-neutral-faded);
+        border-radius: var(--radius-s);
+        display: inline-flex;
+        justify-content: space-between;
+        margin: 0 0 var(--spacing-3);
+        padding: var(--spacing-3);
+        position: relative;
+
+        .value {
+            margin: 0 26px 0 0;
+        }
+
+        .fuelType {
+            background: var(--neutral-black);
+            border: 1px solid var(--border-neutral-faded);
+            border-top-right-radius: var(--radius-s);
+            border-bottom-right-radius: var(--radius-s);
+            padding: 6px 5px;
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            svg {
+                color: var(--neutral-white);
+            }
+        }
+    }
+    .detail:last-of-type {
+        margin: 0;
+    }
+}
+
+.yourFleetQuickActions {
+    .standardCard {
+        /*background: orange;*/
+        display: inline-flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.quickLinkOptions {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    button {
+        margin: var(--spacing-5) 0 0;
+    }
+}

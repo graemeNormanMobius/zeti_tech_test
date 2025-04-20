@@ -10,7 +10,7 @@ interface ButtonProps {
   isSubmit: boolean;
   className?: string;
   icon?: React.ReactNode;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: () => void;
 }
 
 export function Button({
