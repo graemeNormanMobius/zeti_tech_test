@@ -9,7 +9,7 @@ import { CircularSpinningIcon, VisibilityIcon, VisibilityOffIcon, WarningTriangl
 export function Login() {
     const navigate = useNavigate();
     const [passwordShown, setPasswordShown] = useState<any>({ password: false });
-    const [showLoading, setShowLoading] = useState<boolean>(false);
+    const [showLoading, setLoading] = useState<boolean>(false);
     const togglePasswordVisibility = (element: string, visibility: boolean) => {
         setPasswordShown({ ...passwordShown, [element]: visibility });
     };
@@ -27,7 +27,7 @@ export function Login() {
     });
 
     const onSubmit: SubmitHandler<{ email: string; password: string; }> = data => {
-        setShowLoading(true);
+        setLoading(true);
         // handleLogin(data);
 
         fetch("/api/users")
@@ -41,7 +41,9 @@ export function Login() {
                     Cookies.set('userIdentity', JSON.stringify(userWithoutPassword), { expires: 7 })
 
                     if (Cookies.get('userIdentity') !== undefined) {
-                        navigate('/');
+                        setTimeout(() => {
+                            navigate('/');
+                        }, 1500);
                     }
                 } else {
                     alert("Invalid credentials");
@@ -141,7 +143,7 @@ export function Login() {
                             {showLoading && (
                                 <Button
                                     hasIcon="leading"
-                                    size="lg"
+                                    size="md"
                                     state="disabled"
                                     type="accent"
                                     value={

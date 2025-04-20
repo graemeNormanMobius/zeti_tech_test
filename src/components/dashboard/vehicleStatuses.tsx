@@ -2,7 +2,7 @@ import { SubHeader } from "../subHeader.tsx";
 import { useContext, useEffect, useState } from "react";
 import { LoadingAnimation } from "../loadingAnimation.tsx";
 import { ThemeContextV2 } from "../../context/themeContext.tsx";
-import { VehicleStatusError } from "../errorComponent.tsx";
+import { StatusError } from "../errorComponent.tsx";
 import { calculateMileageAndCostToDate, getFirstOfCurrentMonth, getTodayAsISODate, getTodaysDate } from "../../utils/utils.tsx";
 import { Vehicle } from "../../models/models.tsx";
 
@@ -61,7 +61,7 @@ export function VehicleStatuses() {
                 tooltipContent={`Quick view summary of individual vehicles`}
             />
 
-            {(!vehicles.length && !loading) && <VehicleStatusError />}
+            {(!vehicles.length && !loading) && <StatusError message={'No vehicle statuses available currently'} />}
 
             <div className="summaryBlockContainer dirrCol">
                 {loading && (

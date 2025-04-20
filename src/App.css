@@ -21,6 +21,7 @@ Components
 @import './styles/components/subHeader.css';
 @import './styles/components/newDropdownMenu.css';
 @import './styles/components/summaryBlock.css';
+@import './styles/components/modalWindow.css';
 
 /**
 Generic styles

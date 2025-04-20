@@ -1,5 +1,21 @@
 import { DateTime } from "luxon";
+import { isUndefined } from "lodash";
+import Cookies from "js-cookie";
 import { FleetTimestamp, Vehicle } from "../models/models.tsx";
+
+export const metersInAMile = 1609.34;
+
+export const costPerMile = 0.207;
+
+export function getUserClientId() {
+    const userCookie = Cookies.get('userIdentity');
+    return !isUndefined(userCookie) ? JSON.parse(userCookie) : null;
+    // const userObj = !isUndefined(userCookie) ? JSON.parse(userCookie) : null;
+    // console.log('userCookie || userCookie || userCookie');
+    // console.log(userObj);
+
+    // return userObj;
+}
 
 export function getTodaysDate() {
     return new Date('2021-02-28T23:59:00Z');
@@ -16,8 +32,8 @@ export function getFirstOfCurrentMonth(currentDate: any) {
 }
 
 export function calculateMileageAndCostToDate(vehicleListOne: FleetTimestamp[], vehicleListTwo: FleetTimestamp[]) {
-    const metersInAMile = 1609.34;
-    const costPerMile = 0.207 ;
+    // const metersInAMile = 1609.34;
+    // const costPerMile = 0.207 ;
 
     return vehicleListOne[0]?.vehicles.map((vehicle: Vehicle, index: number) => {
         const startOdometer = vehicleListTwo[0]?.vehicles[index]?.state?.odometerInMeters ?? 0;

@@ -1,6 +1,34 @@
 import { SubHeader } from "../subHeader.tsx";
+import { useContext, useEffect, useState } from "react";
+import { Vehicle } from "../../models/models.tsx";
+import { costPerMile, getUserClientId } from "../../utils/utils.tsx";
+import { LoadingAnimation } from "../loadingAnimation.tsx";
+import { ThemeContextV2 } from "../../context/themeContext.tsx";
+import { StatusError } from "../errorComponent.tsx";
 
 export function WelcomeSummary() {
+    const { isDarkTheme } = useContext(ThemeContextV2);
+    const [vehicles, setVehicles] = useState<Vehicle[] | []>([]);
+    const [loading, setLoading] = useState(true);
+
+    const currentUsersClientId = getUserClientId();
+
+    useEffect(() => {
+        // fetch(`/api/timestamps`)
+        fetch(`/api/vehicles?clientId=${currentUsersClientId.clientId}`)
+            .then((res) => res.json())
+            .then((data) => {
+                setVehicles(data);
+                // setVehicles(data[0].vehicles);
+                setTimeout(() => {
+                    setLoading(false);
+                }, 1500);
+
+            })
+            .catch(() => {
+                setLoading(false);
+            });
+    }, [!vehicles.length]); // !vehicles.length
 
     return (
         <div className="standardCard">
@@ -15,8 +43,27 @@ export function WelcomeSummary() {
                         tooltipPlacement={'top'}
                         tooltipContent={`A summary of the total number of vehicles in your fleet and the cost charged per mile`}
                     />
-                    <div className="bodySmall">Fleet: {'XXXX'} vehicles</div>
-                    <div className="bodySmall">Rate: &pound;0.207 per mile</div>
+                    {currentUsersClientId === null && (
+                        <StatusError message={'Unable to find clientId'} />
+                    )}
+                    {loading ? (
+                        <LoadingAnimation
+                            isDarkMode={isDarkTheme}
+                            skeletonType={'thinTextComponent'}
+                            fixedWidth={100}
+                        />
+                    ) : (
+                        <div className="bodySmall">Fleet: {vehicles ? vehicles.length + ' vehicles' : '-'} </div>
+                    )}
+                    {loading ? (
+                        <LoadingAnimation
+                            isDarkMode={isDarkTheme}
+                            skeletonType={'thinTextComponent'}
+                            fixedWidth={100}
+                        />
+                    ) : (
+                        <div className="bodySmall">Rate: &pound;{costPerMile} per mile</div>
+                    )}
                 </div>
                 <div className="summaryBlock highlight">
                     <SubHeader

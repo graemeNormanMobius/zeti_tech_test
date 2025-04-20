@@ -1,0 +1,59 @@
+/**
+  Bootstrap Overrides (DO NOT REMOVE!!)
+ */
+.modal-backdrop.fade {
+  opacity: unset !important;
+}
+.modal-backdrop {
+  background-color: unset !important;
+}
+
+/**
+  Modal dialog background override
+ */
+.modal {
+  background: var(--background-overlay) !important;
+  box-shadow: 0 24px 48px -12px rgba(16, 24, 40, 0.18) !important;
+  backdrop-filter: blur(15px);
+}
+
+/**
+  Modal(s)
+ */
+.mobiusModalWindow {
+  .modalHeader {
+    display: inline-flex;
+    justify-content: space-between;
+    padding: var(--spacing-8) var(--spacing-8) var(--spacing-5) var(--spacing-8);
+    width: 100%;
+
+    .modalName {
+      color: #000;
+      width: auto;
+    }
+
+    .modalManualClose {
+      display: inline-flex;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .modal-content {
+    border: none !important;
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow-2xl);
+  }
+  .modalBody {
+    padding: var(--spacing-5) var(--spacing-8) var(--spacing-8) var(--spacing-8);
+
+    .contentDesc {
+      color: var(--foreground-neutral);
+      margin: 0 0 var(--spacing-7);
+    }
+  }
+  .modalFooter {
+    padding: 0;
+  }
+}

@@ -1,9 +1,9 @@
 import { Notification } from "./notification.tsx";
 
-export function VehicleStatusError() {
+export function StatusError({ message } : { message?: string}) {
     return (
         <div className="summaryBlockContainer dirrCol">
-            <Notification showIcon={false} type={"danger"} header='No vehicle statuses available currently' showContent={false} />
+            <Notification showIcon={false} type={"danger"} header={message ?? 'Error'} showContent={false} />
         </div>
     );
 }

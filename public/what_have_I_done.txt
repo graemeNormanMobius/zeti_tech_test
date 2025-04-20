@@ -1,0 +1,46 @@
+
+What included (packages):
+- React v18
+- Jest
+- Typescript
+- HighCharts
+- AG-Grid
+- ReactPDF
+- CSS grid
+- React Bootstrap
+- JSON Server
+
+Functionality:
+- JSON server to mimic Azure API provided (provided me with more flexibility to create a demo with the limited data provided)
+- Login with user authentication and cookie storage for logged-in user (can add other users if you want in the DB.json)
+- Fully working theme switcher for light / dark mode
+- Custom components built on-top of React-Bootstrap for flexibility (some of these were taken from the APP at Mobius Carbon where I've been working - everything is 100% created by me being the sole Frontend Engineer who worked there)
+- Generate and download invoice for Feb 2021
+- Fake payment form to pay invoice to see Feb 2021 status update to "PAID" on dashboard
+- Ability to Add new cars to fleet through APP
+- On the individual vehicle page status indicator has been added to show potential upcoming services for the vehicle based on current mileage
+- Calculation added to see how much CO2 is saved per mile travel in the electric vehicles compared to an average petrol / diesel vehicle
+- Page to show all fleet vehicles & ability to drill down to individual vehicles to view stats & basic filtering
+- Ability to view and download previous invoices
+- Responsive layout for desktop / tablet / mobile
+- Map to show:
+    - plots for each job for individual cars in the fleet
+    - the radius reach for each vehicle / all vehicles from taxi base location
+- Tests for some functionality (mainly the utils functions)
+
+Presumptions:
+- I've presumed for the purpose of the demo that "today's date" is 28th February 2021
+- I've extended the API data to allow for more functionality to be added in the APP demo. The initial response is as it was still I've just added more properties and values to it
+- When enhancing the data I've presumed that the taxi base location is here : 264 Long Riding, Basildon SS14 1RS (purely because when I did a GoogleMap search for "Bob's taxi" there used to be a Bob's cab in Basildon but has sadly closed down!)
+- I've made a presumption that vehicle with licence plate "CBDH 789" isn't part of Bob's Taxi's fleet as it wasn't mentioned that it was on the brief.
+  As a result I've enhanced the vehicle object to return a new property clientId as a way of identifying and filtering vehicles by their respected client.
+  The same clientId has also been added to the user object so we know which client the user is part of.
+  clientId is a UUID4 generated ID to ensure uniqueness for scalability.
+
+What flexibility does it have:
+- Utils file for main functionality allowing reusability throughout the app
+- Theme setup using CSS variables and a toggleable className in the DOM making adding additional themes for different clients extremely easy
+
+AI:
+- Parts of the initial bootstrapping of the APP (tsconfig / jest.config)
+- A couple of Vite setup bits (as some of the Vite config setup is quite specific)

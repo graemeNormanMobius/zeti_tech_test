@@ -137,12 +137,6 @@
   --foreground-success: var(--green-500);
   --foreground-warning: var(--citrine-500);
 
-  /**
-    *
-    * Mad up tokens
-    *
-  **/
-
   --ghost-color: #000000;
   --comp-container-color: #ebebeb;
   --input-outline-color: #b5b5b5;
@@ -325,11 +319,6 @@
   --foreground-success: var(--green-400);
   --foreground-warning: var(--citrine-400);
 
-  /**
-   *
-   * Mad up tokens
-   *
- **/
   --ghost-color: #ffffff;
   --comp-container-color: #1d1d1d;
   --input-outline-color: #222222;
