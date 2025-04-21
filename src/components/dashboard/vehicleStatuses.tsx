@@ -5,10 +5,11 @@ import { ThemeContextV2 } from "../../context/themeContext.tsx";
 import { StatusError } from "../errorComponent.tsx";
 import { calculateMileageAndCostToDate, getFirstOfCurrentMonth, getTodayAsISODate, getTodaysDate } from "../../utils/utils.tsx";
 import { Vehicle } from "../../models/models.tsx";
+import { useVehicles } from "../../context/vehicleContext.tsx";
 
 export function VehicleStatuses() {
     const { isDarkTheme } = useContext(ThemeContextV2);
-    const [vehiclesTwo, setVehiclesTwo] = useState<Vehicle[] | []>([]);
+    const { vehicles, loadVehicles } = useVehicles();
     const [loading, setLoading] = useState(true);
     const today = getTodaysDate();
 
@@ -25,8 +26,7 @@ export function VehicleStatuses() {
                     result1,
                     result2
                 );
-
-                setVehiclesTwo(currentMonthlyMiles);
+                loadVehicles(currentMonthlyMiles);
                 setTimeout(() => {
                     setLoading(false);
                 }, 1500);
@@ -38,22 +38,7 @@ export function VehicleStatuses() {
             .finally(() => {
                 setLoading(false);
             });
-    }, [!vehiclesTwo.length]);
-
-    // useEffect(() => {
-    //     fetch(`/api/timestamps?date=2021-02-28`)
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             setVehiclesTwo(data[0].vehiclesTwo);
-    //             setTimeout(() => {
-    //                 setLoading(false);
-    //             }, 1500);
-    //
-    //         })
-    //         .catch(() => {
-    //             setLoading(false);
-    //         });
-    // }, [!vehiclesTwo.length]);
+    }, [!vehicles.length]);
 
     return (
         <div className="standardCard">
@@ -64,7 +49,7 @@ export function VehicleStatuses() {
                 tooltipContent={`Quick view summary of fleet vehicles. Newly added vehicles will only appear once tracking starts (this may take a few days).`}
             />
 
-            {(!vehiclesTwo.length && !loading) && <StatusError message={'No vehicle statuses available currently'} />}
+            {(!vehicles.length && !loading) && <StatusError message={'No vehicle statuses available currently'} />}
 
             <div className="summaryBlockContainer dirrCol">
                 {loading && (
@@ -100,7 +85,7 @@ export function VehicleStatuses() {
                     </>
                 )}
 
-                {!loading && vehiclesTwo.length > 0 && vehiclesTwo.map((vehicle: Vehicle, index: number) => {
+                {!loading && vehicles.length > 0 && vehicles.map((vehicle: Vehicle, index: number) => {
                     return (
                         <div className="summaryBlock" key={index}>
                             <div className="bodyMedEmp">{vehicle.licensePlate}</div>

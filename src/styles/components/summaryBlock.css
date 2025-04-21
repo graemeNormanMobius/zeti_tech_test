@@ -18,15 +18,24 @@
 .summaryBlock {
     border-radius: var(--radius-m);
     border: 1px solid var(--border-neutral);
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: var(--spacing-4);
     position: relative;
     width: 100%;
 
-    .monthlyMilesTotal {
-        bottom: 16px;
-        left: 100px;
-        position: absolute;
+    .totalFleetMileage {
+        position: relative;
+
+        .monthlyMilesTotal {
+            margin: 0 var(--spacing-4) 0 0;
+            /*bottom: 3px;*/
+            /*left: 105px;*/
+            /*position: absolute;*/
+        }
     }
+
 }
 .summaryBlock.highlight {
     border: 1px solid var(--gray-700);

@@ -122,6 +122,7 @@ h4 {
   -moz-osx-font-smoothing: grayscale;
 }
 .bodyMedEmp {
+  color: var(--foreground-neutral-faded);
   font-family: 'PP Neue Montreal Medium', serif;
   font-size: 16px;
   font-style: normal;
@@ -131,6 +132,7 @@ h4 {
   -moz-osx-font-smoothing: grayscale;
 }
 .bodyMed {
+  color: var(--foreground-neutral-faded);
   font-family: 'PP Neue Montreal Regular', serif;
   font-size: 16px;
   font-style: normal;

@@ -32,6 +32,9 @@ export function YourFleet() {
         }
     }, [vehicles.length]);
 
+    console.log('vehicles || vehicles');
+    console.log(vehicles);
+
     return (
         <div className="gridContainer fleetList">
             {/*<div className='mcCard backgroundFadedBoxShadow spacing-md fleetFilterContainer'>*/}

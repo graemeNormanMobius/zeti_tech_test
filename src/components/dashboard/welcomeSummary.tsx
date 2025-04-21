@@ -1,34 +1,33 @@
 import { SubHeader } from "../subHeader.tsx";
-import { useContext, useEffect, useState } from "react";
-import { Vehicle } from "../../models/models.tsx";
-import { costPerMile, getUserClientId } from "../../utils/utils.tsx";
+import {Fragment, useContext, useEffect, useState} from "react";
+import { costPerMile, fleetCurrentMonthRollingInvoiceCost, fleetTotalMileage, getUserClientId } from "../../utils/utils.tsx";
 import { LoadingAnimation } from "../loadingAnimation.tsx";
 import { ThemeContextV2 } from "../../context/themeContext.tsx";
 import { StatusError } from "../errorComponent.tsx";
+import { useVehicles } from "../../context/vehicleContext.tsx";
 
 export function WelcomeSummary() {
     const { isDarkTheme } = useContext(ThemeContextV2);
-    const [vehicles, setVehicles] = useState<Vehicle[] | []>([]);
+    const { vehicles, fleetMileage, fleetMonthlyCost, updateFleetMileage, updateFleetMonthlyCost } = useVehicles();
     const [loading, setLoading] = useState(true);
-
     const currentUsersClientId = getUserClientId();
 
-    useEffect(() => {
-        // fetch(`/api/timestamps`)
-        fetch(`/api/vehicles?clientId=${currentUsersClientId.clientId}`)
-            .then((res) => res.json())
-            .then((data) => {
-                setVehicles(data);
-                // setVehicles(data[0].vehicles);
-                setTimeout(() => {
-                    setLoading(false);
-                }, 1500);
+    let totalFleetMileage: number = 0;
+    let totalMonthlyFleetCost: number = 0;
 
-            })
-            .catch(() => {
+    useEffect(() => {
+        if (vehicles.length > 0) {
+            totalFleetMileage = fleetTotalMileage(vehicles);
+            totalMonthlyFleetCost = fleetCurrentMonthRollingInvoiceCost(vehicles);
+            updateFleetMileage(totalFleetMileage);
+            updateFleetMonthlyCost(totalMonthlyFleetCost);
+
+
+            setTimeout(() => {
                 setLoading(false);
-            });
-    }, [!vehicles.length]); // !vehicles.length
+            }, 1500);
+        }
+    }, [vehicles]);
 
     return (
         <div className="standardCard">
@@ -73,10 +72,23 @@ export function WelcomeSummary() {
                         tooltipContent={`A summary of the current month's billing amount and total miles accumulated (can be up to 24hrs behind)`}
                     />
                     <div className="bodySmall">
-                        Current Month Billing <br />
-                        <div className="bodyLargeEmp">&pound;231.98</div>
+                        {loading ? (
+                            <LoadingAnimation
+                                alwaysDarkMode={true}
+                                isDarkMode={isDarkTheme}
+                                skeletonType={'thickTextComponent'}
+                                fixedWidth={100}
+                            />
+                        ) : (
+                            <div className="totalFleetMileage">
+                                <Fragment>
+                                    <span className="bodyLargeEmp monthlyMilesTotal">&pound;{fleetMonthlyCost.toFixed(2)}</span>
+                                    <span className="bodyXSmall">across {fleetMileage} miles</span>
+                                </Fragment>
+                            </div>
+                        )}
                     </div>
-                    <span className="bodyXSmall monthlyMilesTotal">across XXXX miles</span>
+
                 </div>
             </div>
         </div>

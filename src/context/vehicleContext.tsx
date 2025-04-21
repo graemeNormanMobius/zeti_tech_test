@@ -1,15 +1,14 @@
 
 import { createContext, useContext, useState, ReactNode } from 'react';
-import {Vehicle} from "../models/models.tsx";
-
-// export type Vehicle = {
-//     id: number;
-//     name: string;
-// };
+import { Vehicle } from "../models/models.tsx";
 
 interface VehicleContextType {
     vehicles: Vehicle[];
-    addVehicle: (vehicle: Vehicle) => void; // vehicle: Vehicle
+    fleetMileage: number;
+    updateFleetMileage: (value: number) => void;
+    fleetMonthlyCost: number;
+    updateFleetMonthlyCost: (value: number) => void;
+    addVehicle: (vehicle: Vehicle) => void;
     loadVehicles: (vehicle: Vehicle[]) => void;
 }
 
@@ -17,25 +16,27 @@ const VehicleContext = createContext<VehicleContextType | null>(null);
 
 export const VehicleProvider = ({ children }: { children: ReactNode }) => {
     const [vehicles, setVehicles] = useState<Vehicle[] | []>([]);
-    // const [vehicles, setVehicles] = useState<Vehicle[]>([
-    //     { id: 1, name: 'Toyota Corolla' },
-    //     { id: 2, name: 'Ford Mustang' }
-    // ]);
+    const [fleetMileage, setFleetMileage] = useState<number>(0);
+    const [fleetMonthlyCost, setFleetMonthlyCost] = useState<number>(0);
 
     const addVehicle: any = (vehicle: any) => {
-        // setVehicles(prev => [...prev, { id: Date.now(), ...vehicle }]);
         setVehicles((prev: any[]) => [...prev, vehicle]);
     };
-    // const addVehicle = (vehicle: Omit<Vehicle, 'id'>) => {
-    //     setVehicles(prev => [...prev, { id: Date.now(), ...vehicle }]);
-    // };
+
+    const updateFleetMileage = (value: number) => {
+        setFleetMileage(value);
+    }
+
+    const updateFleetMonthlyCost = (value: number) => {
+        setFleetMonthlyCost(value);
+    }
 
     const loadVehicles = (vehicles: Vehicle[]) => {
         setVehicles(vehicles);
     };
 
     return (
-        <VehicleContext.Provider value={{ vehicles, addVehicle, loadVehicles }}>
+        <VehicleContext.Provider value={{ vehicles, fleetMileage, fleetMonthlyCost, updateFleetMileage, updateFleetMonthlyCost, addVehicle, loadVehicles }}>
             {children}
         </VehicleContext.Provider>
     );
@@ -49,36 +50,3 @@ export const useVehicles = () => {
     }
     return context;
 };
-
-
-// import { createContext, useContext, useState } from 'react';
-// import {Vehicle} from "../models/models.tsx";
-//
-// interface VehicleContextType {
-//     vehicles: Vehicle[];
-//     addVehicle: (vehicle: Vehicle) => void;
-// }
-//
-// const VehicleContext = createContext<VehicleContextType | null>(null);
-// // const VehicleContext = createContext<VehicleContextType | []>([]);
-//
-// export const VehicleProvider = ({ children }: { children: any }) => {
-//     const [vehicles, setVehicles] = useState<Vehicle[] | []>([]);
-//     // const [vehicles, setVehicles] = useState([
-//     //     { id: 1, name: 'Toyota Corolla' },
-//     //     { id: 2, name: 'Ford Mustang' }
-//     // ]);
-//
-//     const addVehicle = (vehicle: any) => {
-//         // setVehicles(prev => [...prev, { id: Date.now(), ...vehicle }]);
-//         setVehicles((prev: any[]) => [...prev, vehicle]);
-//     };
-//
-//     return (
-//         <VehicleContext.Provider value={{ vehicles, addVehicle }}>
-//             {children}
-//         </VehicleContext.Provider>
-//     );
-// };
-//
-// export const useVehicles = () => useContext(VehicleContext);

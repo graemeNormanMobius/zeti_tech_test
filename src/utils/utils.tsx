@@ -53,3 +53,15 @@ export function getInitials(name: string) {
     if (splitName.length === 1) return splitName[0][0];
     return (splitName[0][0] + splitName[splitName.length - 1][0]).toUpperCase();
 }
+
+export function fleetTotalMileage(vehicleList: Vehicle[]) {
+    return vehicleList.reduce((sum, vehicle) => {
+        return sum + (vehicle.state?.milesThisCalendarMonth ?? 0);
+    }, 0);
+}
+
+export function fleetCurrentMonthRollingInvoiceCost(vehicleList: Vehicle[]) {
+    return vehicleList.reduce((sum, vehicle) => {
+        return sum + (vehicle.state?.costThisCalendarMonth ?? 0);
+    }, 0);
+}
