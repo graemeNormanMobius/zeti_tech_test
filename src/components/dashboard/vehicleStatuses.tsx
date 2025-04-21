@@ -14,7 +14,7 @@ export function VehicleStatuses() {
 
     useEffect(() => {
         const currentDate = getTodayAsISODate();
-        const firstOfCurrentMonth = getFirstOfCurrentMonth(today.toISOString());
+        const firstOfCurrentMonth = getFirstOfCurrentMonth(today);
 
         const fetch1 = fetch(`/api/timestamps?date=${currentDate}`).then(res => res.json());
         const fetch2 = fetch(`/api/timestamps?date=${firstOfCurrentMonth}`).then(res => res.json());

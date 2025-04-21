@@ -9,16 +9,12 @@ export const costPerMile = 0.207;
 
 export function getUserClientId() {
     const userCookie = Cookies.get('userIdentity');
-    return !isUndefined(userCookie) ? JSON.parse(userCookie) : null;
-    // const userObj = !isUndefined(userCookie) ? JSON.parse(userCookie) : null;
-    // console.log('userCookie || userCookie || userCookie');
-    // console.log(userObj);
 
-    // return userObj;
+    return !isUndefined(userCookie) ? JSON.parse(userCookie) : null;
 }
 
 export function getTodaysDate() {
-    return new Date('2021-02-28T23:59:00Z');
+    return new Date('2021-02-28T23:59:00Z').toISOString();
 }
 
 export function getTodayAsISODate() {
@@ -34,17 +30,8 @@ export function getFirstOfCurrentMonth(currentDate: any) {
 export function calculateMileageAndCostToDate(vehicleListOne: FleetTimestamp[], vehicleListTwo: FleetTimestamp[]) {
     const currentUsersClientId = getUserClientId();
 
-    console.log('vehicleListOne');
-    const filterOne = vehicleListOne.flatMap((entry: any) => entry.vehicles.filter((vehicle: any) => vehicle.clientId === currentUsersClientId.clientId))
-    console.log(filterOne);
-
-    console.log('vehicleListTwo');
-    const filterTwo = vehicleListTwo.flatMap((entry: any) => entry.vehicles.filter((vehicle: any) => vehicle.clientId === currentUsersClientId.clientId))
-    console.log(filterTwo);
-
-
     return vehicleListOne.flatMap((entry: any) => entry.vehicles.filter((vehicle: any) => vehicle.clientId === currentUsersClientId.clientId)).map((vehicle: Vehicle, index: number) => {
-        const startOdometer = filterTwo[index]?.state?.odometerInMeters ?? 0;
+        const startOdometer = vehicleListTwo.flatMap((entry: any) => entry.vehicles.filter((vehicle: any) => vehicle.clientId === currentUsersClientId.clientId))[index]?.state?.odometerInMeters ?? 0;
         const endOdometer = vehicle?.state?.odometerInMeters ?? 0;
         const milesThisCalendarMonth = Math.round((endOdometer - startOdometer) / metersInAMile);
         const costThisCalendarMonth = (Math.round((endOdometer - startOdometer) / metersInAMile) * costPerMile);

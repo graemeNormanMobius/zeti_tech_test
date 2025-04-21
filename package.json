@@ -13,6 +13,8 @@
   "dependencies": {
     "@hookform/error-message": "^2.0.1",
     "@types/js-cookie": "^3.0.6",
+    "ag-grid-community": "^33.2.4",
+    "ag-grid-react": "^33.2.4",
     "js-cookie": "^3.0.5",
     "lodash": "^4.17.21",
     "react": "^19.0.0",

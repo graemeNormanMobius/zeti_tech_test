@@ -47,13 +47,14 @@ html {
     height: 100vh;
 }
 body {
-    background: var(--background-neutral);
+    /*background: var(--background-neutral);*/
+    background: var(--background-base);
     margin: 0;
 }
 .wrapper {
-    background: var(--background-base);
+    /*background: var(--background-base);*/
     container-type: inline-size;
-    height: 100vh;
+    /*height: 100vh;*/
 }
 
 /*#root {*/

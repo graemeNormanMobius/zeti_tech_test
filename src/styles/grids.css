@@ -86,11 +86,11 @@
             }
             .dashboardRecentInvoices {
                 grid-column: span 8;
-                grid-row: auto;
+                grid-row: 3 / 5;
             }
             .dashboardQuickActions {
                 grid-column: span 4;
-                grid-row: auto;
+                grid-row: 3 / 4;
             }
             /**
                 Fleet
