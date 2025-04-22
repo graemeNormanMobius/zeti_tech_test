@@ -1,5 +1,5 @@
 import 'mapbox-gl/dist/mapbox-gl.css'
-import { useMemo, useState } from 'react'
+import {useContext, useMemo, useState} from 'react'
 import Map, {
     Marker,
     Popup,
@@ -8,12 +8,14 @@ import Map, {
     ScaleControl,
     GeolocateControl
 } from 'react-map-gl/mapbox';
-import {SubHeader} from "../subHeader.tsx";
+import { SubHeader } from "../subHeader.tsx";
 import { last10Journeys } from "../../data/mapData.tsx";
 import { MAPBOX_API_KEY } from "../../tokens/tokens.tsx";
-import {PinIcon} from "../icons.tsx";
+import { PinIcon } from "../icons.tsx";
+import { ThemeContextV2 } from "../../context/themeContext.tsx";
 
 export function MileageTrends() {
+    const { isDarkTheme } = useContext(ThemeContextV2);
     const [popupInfo, setPopupInfo] = useState<any>(null);
 
     const pins = useMemo(
@@ -52,7 +54,7 @@ export function MileageTrends() {
                         bearing: 0,
                         pitch: 0
                     }}
-                    mapStyle="mapbox://styles/mapbox/light-v9"
+                    mapStyle={`mapbox://styles/mapbox/${isDarkTheme ? 'dark-v9' : 'light-v9'}`}
                     style={{ height: '400px', width: '100%' }}
 
                     mapboxAccessToken={MAPBOX_API_KEY}
