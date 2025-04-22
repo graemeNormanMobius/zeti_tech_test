@@ -1,13 +1,4 @@
 
-// export type User = {
-//     id: 1,
-//     firstname: "Graeme",
-//     surname: "Norman",
-//     email: "gnorman85@googlemail.com",
-//     password: "password123",
-//     clientId: "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
-// }
-
 export type Vehicle = {
     vin: string;
     licensePlate: string;
@@ -29,3 +20,21 @@ export type FleetTimestamp = {
     id: string;
     vehicles: Vehicle[];
 }
+
+export type BasicInvoice = {
+    id: number;
+    period: string;
+    amount: number;
+    status: 'paid' | 'upcoming' | 'pending' | 'outstanding';
+    totalVehicles: number;
+    totalMiles: number;
+    clientId: string;
+}
+
+export type LocationData = {
+    base: boolean;
+    city: string;
+    locationName: string;
+    latitude: number;
+    longitude: number
+};

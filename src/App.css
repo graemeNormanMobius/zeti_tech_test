@@ -11,6 +11,7 @@ Global Aspects
 Components
 **/
 @import './styles/components/newButton.css';
+@import './styles/components/badge.css';
 @import './styles/components/chip.css';
 @import './styles/components/cards.css';
 @import './styles/components/mainNav.css';
@@ -47,55 +48,42 @@ html {
     height: 100vh;
 }
 body {
-    /*background: var(--background-neutral);*/
     background: var(--background-base);
     margin: 0;
 }
 .wrapper {
-    /*background: var(--background-base);*/
     container-type: inline-size;
-    /*height: 100vh;*/
 }
 
-/*#root {*/
-/*  max-width: 1280px;*/
-/*  margin: 0 auto;*/
-/*  padding: 2rem;*/
-/*  text-align: center;*/
-/*}*/
+.paymentStatus {
+    display: inline-flex;
+    justify-content: flex-end;
+    width: 100%;
+}
 
-/*.logo {*/
-/*  height: 6em;*/
-/*  padding: 1.5em;*/
-/*  will-change: filter;*/
-/*  transition: filter 300ms;*/
-/*}*/
-/*.logo:hover {*/
-/*  filter: drop-shadow(0 0 2em #646cffaa);*/
-/*}*/
-/*.logo.react:hover {*/
-/*  filter: drop-shadow(0 0 2em #61dafbaa);*/
-/*}*/
+.invoicesContainer {
+    margin: var(--spacing-5) 0 0;
+}
 
-/*@keyframes logo-spin {*/
-/*  from {*/
-/*    transform: rotate(0deg);*/
-/*  }*/
-/*  to {*/
-/*    transform: rotate(360deg);*/
-/*  }*/
-/*}*/
 
-/*@media (prefers-reduced-motion: no-preference) {*/
-/*  a:nth-of-type(2) .logo {*/
-/*    animation: logo-spin infinite 20s linear;*/
-/*  }*/
-/*}*/
+.mapContainer {
+    margin: var(--spacing-5) 0 0;
 
-/*.card {*/
-/*  padding: 2em;*/
-/*}*/
+    .pinBase {
+        cursor: pointer;
+        color: #DD0000FF;
+        stroke: none;
+    }
+    .pin {
+        cursor: pointer;
+        color: #2055C7FF;
+        stroke: none;
+    }
 
-/*.read-the-docs {*/
-/*  color: #888;*/
-/*}*/
+    #map {
+        height: 400px;
+        width: 100%;
+    }
+}
+
+

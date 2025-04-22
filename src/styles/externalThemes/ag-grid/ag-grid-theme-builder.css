@@ -7,19 +7,17 @@
 @import 'ag-grid-community/styles/ag-theme-quartz.css';
 
 .agGridContainer {
-  /*max-height: 1500px !important;*/
-  /*min-height: 400px !important;*/
-  height: 300px !important; /* 800px !important;*/
+  height: 350px !important;
 }
 
 .ag-theme-custom {
-  --ag-background-color: var(--background-faded); /* #FFFFFF; */
+  --ag-background-color: var(--background-faded);
   --ag-foreground-color: #5a5a69;
   --ag-text-color: var(--ag-foreground-color);
   --ag-accent-color: #111111;
   --ag-invalid-color: #e02525;
   --ag-border-color: #ededf2;
-  --ag-wrapper-border: solid 1px var(--border-neutral-faded); /* solid 1px var(--ag-border-color); */
+  --ag-wrapper-border: solid 1px var(--border-neutral-faded);
   --ag-row-border: false; /* false; */
   /*--ag-row-border: var(--background-neutral);*/
   --ag-header-border: var(--ag-row-border);

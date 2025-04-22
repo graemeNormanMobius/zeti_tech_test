@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { useLocation } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { ButtonTooltip } from "./button-tooltip.tsx";
-import { AddVehicleIcon, BillingIcon, DashboardIcon, VehicleIcon } from "./icons.tsx";
+import { BillingIcon, DashboardIcon, VehicleIcon } from "./icons.tsx";
 import bobsLogo from '../assets/clientLogos/bobs.png'
 
 interface NavItemProps {
@@ -22,11 +22,6 @@ const mainNavigationWithBenchmarking: NavItemProps[] = [
     icon: <VehicleIcon className="menuIcon" />,
     to: '/yourFleet',
     label: 'Your Fleet'
-  },
-  {
-    icon: <AddVehicleIcon className="menuIcon" />,
-    to: '/addVehicle',
-    label: 'Add Vehicle to fleet'
   },
   {
     icon: <BillingIcon className="menuIcon" />,

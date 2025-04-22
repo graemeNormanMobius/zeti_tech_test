@@ -6,7 +6,6 @@
     grid-auto-flow: row;
     grid-gap: 20px;
     grid-auto-rows: minmax(100px, auto) auto;
-    /*padding: 0 0 35px;*/
 }
 
 /**
@@ -16,7 +15,7 @@
         background: var(--background-base);
     }
 
-    @media only screen and (max-width: 48rem) { /* 768px */
+    @media only screen and (max-width: 48rem) {
         .gridContainer {
             /**
                 Login
@@ -50,10 +49,6 @@
             }
         }
     }
-
-    /*@media only screen and (min-width: 36rem) { !* 576px *!*/
-
-    /*}*/
 
     @media only screen and (min-width: 48rem) { /* 768px */
         .gridContainer.fleetList {
@@ -97,62 +92,14 @@
             **/
             .fleetFilterContainer {
                 grid-column: span 12;
-                /*grid-row: 1;*/
             }
             .yourFleetQuickActions {
                 grid-column: span 4;
                 min-height: 300px;
-                /*grid-row: 2 / 6;*/
             }
             .yourFleetVehicle {
                 grid-column: span 4;
                 min-height: 300px;
-                /*grid-row: 2 / 6;*/
             }
-
         }
     }
-
-    /*@media only screen and (min-width: 62rem) { !* 992px *!*/
-    /*    .outer-container {*/
-    /*        border: 2px dashed red;*/
-    /*    }*/
-    /*}*/
-
-    /*@media only screen and (min-width: 75rem) { !* 1200px *!*/
-    /*    .outer-container {*/
-    /*        border: 2px dashed orange;*/
-    /*    }*/
-    /*}*/
-
-
-    /*@media only screen and (min-width: 62rem) {*/
-    /*    .gridContainer {*/
-    /*        .dashboardSummary {*/
-    /*            grid-column: span 12;*/
-    /*            grid-row: auto;*/
-    /*        }*/
-    /*        .dashboardMileageTrends {*/
-    /*            grid-column: span 8;*/
-    /*            grid-row: auto;*/
-    /*        }*/
-    /*        .dashboardVehicleStatuses {*/
-    /*            grid-column: span 4;*/
-    /*            grid-row: auto;*/
-    /*        }*/
-    /*        .dashboardRecentInvoices {*/
-    /*            grid-column: span 8;*/
-    /*            grid-row: auto;*/
-    /*        }*/
-    /*        .dashboardQuickActions {*/
-    /*            grid-column: span 4;*/
-    /*            grid-row: auto;*/
-    /*        }*/
-    /*    }*/
-    /*}*/
-
-    /*@media only screen and (min-width: 75rem) {*/
-    /*    .gridContainer {*/
-
-    /*    }*/
-    /*}*/

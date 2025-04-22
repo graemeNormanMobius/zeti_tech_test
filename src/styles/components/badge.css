@@ -1,0 +1,77 @@
+.badge {
+  align-items: center;
+  color: var(--foreground-neutral);
+  display: inline-flex;
+  justify-content: center;
+
+  .indicator {
+    border-radius: var(--radius-full);
+    height: 8px;
+    margin: 0 var(--spacing-2) 0 0;
+    width: 8px;
+  }
+}
+
+/**
+  Type
+ */
+.badge.type-default {
+  background: var(--background-neutral);
+  border-radius: var(--radius-s);
+  border: 1px solid var(--border-neutral);
+  padding: var(--spacing-2) var(--spacing-3);
+}
+
+.badge.type-text {
+  /*background: var(--background-neutral);*/
+  padding: 0;
+}
+
+.badge.type-dot {
+  padding: 0;
+
+  .indicator {
+    margin: 0;
+  }
+}
+
+.badge.type-rounded {
+  .indicator {
+    color: var(--foreground-neutral-on-accent);
+    height: auto;
+    margin: 0;
+    min-height: var(--spacing-5);
+    min-width: var(--spacing-5);
+    padding: var(--spacing-1) var(--spacing-2);
+    width: auto;
+  }
+}
+
+/**
+  Sentiment
+ */
+.badge.sentiment-default {
+  .indicator {
+    background: var(--foreground-neutral);
+  }
+}
+.badge.sentiment-highlight {
+  .indicator {
+    background: var(--foreground-accent);
+  }
+}
+.badge.sentiment-positive {
+  .indicator {
+    background: var(--foreground-success);
+  }
+}
+.badge.sentiment-negative {
+  .indicator {
+    background: var(--foreground-negative);
+  }
+}
+.badge.sentiment-warning {
+  .indicator {
+    background: var(--foreground-warning);
+  }
+}

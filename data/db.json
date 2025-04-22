@@ -64,6 +64,20 @@
       "type": "electric",
       "state": null,
       "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
+    },
+    {
+      "id": "9019",
+      "vin": "555aaabbb",
+      "licensePlate": "ND19 GAO",
+      "make": "BMW",
+      "model": "M5 Comp",
+      "type": "petrol",
+      "state": {
+        "odometerInMeters": 0,
+        "speedInMph": 0,
+        "asAt": "2025-04-21T21:05:13.046Z"
+      },
+      "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
     }
   ],
   "timestamps": [
@@ -154,6 +168,53 @@
           "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
         }
       ]
+    }
+  ],
+  "historicAndUpcomingInvoices": [
+    {
+      "id": 52,
+      "period": "Jan 2021",
+      "amount": 1039,
+      "status": "pending",
+      "totalVehicles": 2,
+      "totalMiles": 349,
+      "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
+    },
+    {
+      "id": 51,
+      "period": "Dec 2020",
+      "amount": 1387,
+      "status": "outstanding",
+      "totalVehicles": 2,
+      "totalMiles": 349,
+      "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
+    },
+    {
+      "id": 50,
+      "period": "Nov 2020",
+      "amount": 1271,
+      "status": "paid",
+      "totalVehicles": 2,
+      "totalMiles": 349,
+      "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
+    },
+    {
+      "id": 49,
+      "period": "Oct 2020",
+      "amount": 753,
+      "status": "paid",
+      "totalVehicles": 2,
+      "totalMiles": 349,
+      "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
+    },
+    {
+      "id": 48,
+      "period": "Sept 2020",
+      "amount": 860,
+      "status": "paid",
+      "totalVehicles": 2,
+      "totalMiles": 349,
+      "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
     }
   ]
 }

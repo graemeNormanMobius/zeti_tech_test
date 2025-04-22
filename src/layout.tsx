@@ -6,7 +6,6 @@ import { MainMenu } from "./components/mainMenu.tsx";
 import { ProtectedRoute } from "./routes/protectedRoute.tsx";
 import { Dashboard } from "./routes/dashboard.tsx";
 import { YourFleet } from "./routes/yourFleet.tsx";
-import { AddToFleet } from "./routes/addToFleet.tsx";
 import { Billing } from "./routes/billing.tsx";
 import { Login } from "./routes/login.tsx";
 
@@ -56,9 +55,7 @@ export function Layout() {
                         <Route path="/login" element={<Login />} />
                         <Route path="/" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
                         <Route path="/yourFleet" element={<ProtectedRoute><YourFleet /></ProtectedRoute>} />
-                        <Route path="/addVehicle" element={<ProtectedRoute><AddToFleet /></ProtectedRoute>} />
                         <Route path="/billingHistory" element={<ProtectedRoute><Billing /></ProtectedRoute>} />
-                        {/*<Route path="/post/:id" element={<ProtectedRoute><Post id={1} /></ProtectedRoute>} />*/}
                     </Routes>
                 </div>
             </div>
