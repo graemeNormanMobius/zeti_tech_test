@@ -12,7 +12,6 @@ import { LoadingAnimation } from "../loadingAnimation.tsx";
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import '../../styles/externalThemes/ag-grid/ag-grid-theme-builder.css';
 
-// Register required modules
 ModuleRegistry.registerModules([ClientSideRowModelModule]);
 provideGlobalGridOptions({ theme: "legacy" });
 

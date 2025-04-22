@@ -24,7 +24,6 @@
             align-items: center;
             display: inline-flex;
             flex: 1 1 50%;
-            /*flex-grow: 1;*/
             padding: var(--spacing-4) 0;
             z-index: 1;
         }
@@ -84,34 +83,50 @@
         }
     }
 
-    @media only screen and (max-width: 36rem) { /* 576px */
+    @media only screen and (max-width: 36rem) {
+        .header {
+            left: 0 !important;
+            width: 100%;
+        }
+        .mainNav {
+            bottom: 0;
+            height: 80px;
+            left: unset;
+            padding: 0;
+            top: unset;
+            width: 100%;
+
+            .companyLogo {
+                display: none;
+            }
+            .mainNavItems {
+                align-items: center;
+                flex-direction: row;
+                max-height: 80px;
+                justify-content: space-around;
+            }
+        }
         .outer-container {
-            border: 2px dashed yellowgreen;
+            left: 0;
+            margin: 100px 40px 120px 40px;
+            position: unset;
         }
     }
 
     @media only screen and (min-width: 36rem) { /* 576px */
-        .outer-container {
-            border: 2px dashed blue;
-        }
+        .outer-container {}
     }
 
     @media only screen and (min-width: 48rem) { /* 768px */
-        .outer-container {
-            border: 2px dashed hotpink;
-        }
+        .outer-container {}
     }
 
     @media only screen and (min-width: 62rem) { /* 992px */
-        .outer-container {
-            border: 2px dashed red;
-        }
+        .outer-container {}
     }
 
     @media only screen and (min-width: 75rem) { /* 1200px */
-        .outer-container {
-            border: 2px dashed orange;
-        }
+        .outer-container {}
     }
 
     @media only screen and (min-width: 87.5rem) {  /* 1400px */
@@ -126,7 +141,7 @@
 
         .outer-container {
             border: 2px dashed green;
-            margin: calc(56px + var(--spacing-3)) auto 0; /* (Header + AssetTabs) + padding from design */
+            margin: calc(56px + var(--spacing-3)) auto 0;
             max-width: 1520px;
             left: 120px;
             right: 40px;
@@ -134,7 +149,6 @@
             .contentArea {
                 display: inline-flex;
                 flex-direction: column;
-                /*margin: 0 0 40px;*/
                 width: 100%;
             }
         }
@@ -144,7 +158,7 @@
 @media only screen and (min-width: 87.5rem) {
     .navbarFullWidthContainer.withTabs {
         .outer-container {
-            margin: calc(105px + var(--spacing-3)) auto 0; /* (Header + AssetTabs) + padding from design */
+            margin: calc(105px + var(--spacing-3)) auto 0;
             max-width: 1520px;
             left: 120px;
             right: 40px;
@@ -162,7 +176,7 @@
 @media only screen and (min-width: 87.5rem) {
     .navbarFullWidthContainer.withTabs {
         .outer-container {
-            margin: calc(105px + var(--spacing-3)) auto 0; /* (Header + AssetTabs) + padding from design */
+            margin: calc(105px + var(--spacing-3)) auto 0;
             max-width: 1520px;
             left: 120px;
             right: 40px;

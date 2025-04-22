@@ -32,8 +32,8 @@ export function VehicleStatuses() {
                 }, 1500);
             })
             .catch(error => {
-                console.error('Error fetching data:', error);
                 setLoading(false);
+                throw new Error("Error fetching data: " + error.message);
             })
             .finally(() => {
                 setLoading(false);

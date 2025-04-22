@@ -31,6 +31,7 @@ const mainNavigationWithBenchmarking: NavItemProps[] = [
 ];
 
 export function MainMenu() {
+  const isMobile: boolean = window.matchMedia("(max-width: 576px)").matches;
   const currentNavLocation = useLocation();
 
   let activeUrlRoute =
@@ -48,7 +49,7 @@ export function MainMenu() {
         </div>
         <div className="mainNavItems">
           {mainNavigationWithBenchmarking?.map((item, index) => (
-            <ButtonTooltip key={index} type="micro" placement="right" data={`${item.label}`}>
+            <ButtonTooltip key={index} type="micro" placement={isMobile ? "top" : "right"} data={`${item.label}`}>
               <NavLink
                 end
                 to={item.to}

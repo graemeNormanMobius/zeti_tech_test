@@ -4,7 +4,7 @@
       "id": 1,
       "firstname": "Graeme",
       "surname": "Norman",
-      "email": "gnorman85@googlemail.com",
+      "email": "graemeTest@testmail.com",
       "password": "password123",
       "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
     },
@@ -175,9 +175,27 @@
       "id": 52,
       "period": "Jan 2021",
       "amount": 1039,
+      "status": "paid",
+      "totalVehicles": 2,
+      "totalMiles": 649,
+      "clientId": "0eb3e1f1-be08-4a3f-bb32-395f51266114"
+    },
+    {
+      "id": 51,
+      "period": "Dec 2020",
+      "amount": 1387,
+      "status": "paid",
+      "totalVehicles": 2,
+      "totalMiles": 1147,
+      "clientId": "0eb3e1f1-be08-4a3f-bb32-395f51266114"
+    },
+    {
+      "id": 52,
+      "period": "Jan 2021",
+      "amount": 1039,
       "status": "pending",
       "totalVehicles": 2,
-      "totalMiles": 349,
+      "totalMiles": 649,
       "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
     },
     {
@@ -186,7 +204,7 @@
       "amount": 1387,
       "status": "outstanding",
       "totalVehicles": 2,
-      "totalMiles": 349,
+      "totalMiles": 1147,
       "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
     },
     {
@@ -195,7 +213,7 @@
       "amount": 1271,
       "status": "paid",
       "totalVehicles": 2,
-      "totalMiles": 349,
+      "totalMiles": 1023,
       "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
     },
     {
@@ -204,7 +222,7 @@
       "amount": 753,
       "status": "paid",
       "totalVehicles": 2,
-      "totalMiles": 349,
+      "totalMiles": 447,
       "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
     },
     {
@@ -213,7 +231,7 @@
       "amount": 860,
       "status": "paid",
       "totalVehicles": 2,
-      "totalMiles": 349,
+      "totalMiles": 691,
       "clientId": "d35b0c9f-1cc2-48ef-a2dc-e669baac8804"
     }
   ]

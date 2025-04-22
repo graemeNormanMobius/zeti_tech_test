@@ -18,6 +18,45 @@
     @media only screen and (max-width: 48rem) {
         .gridContainer {
             /**
+                Dashboard
+            **/
+            .dashboardSummary {
+                grid-column: span 12;
+                grid-row: auto;
+            }
+            .dashboardMileageTrends {
+                grid-column: span 12;
+                grid-row: auto;
+            }
+            .dashboardVehicleStatuses {
+                grid-column: span 12;
+                grid-row: auto;
+            }
+            .dashboardRecentInvoices {
+                grid-column: span 12;
+                grid-row: auto;
+            }
+            .dashboardQuickActions {
+                grid-column: span 12;
+                grid-row: auto;
+            }
+
+            /**
+                Fleet
+            **/
+            .yourFleetQuickActions {
+                grid-column: span 12;
+                min-height: 200px;
+            }
+            .yourFleetVehicle {
+                grid-column: span 12;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 48rem) {
+        .gridContainer {
+            /**
                 Login
             **/
             .login {
@@ -90,9 +129,22 @@
             /**
                 Fleet
             **/
-            .fleetFilterContainer {
-                grid-column: span 12;
+            .yourFleetQuickActions {
+                grid-column: span 6;
+                min-height: 300px;
             }
+            .yourFleetVehicle {
+                grid-column: span 6;
+                min-height: 300px;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 75rem) {
+        .gridContainer {
+            /**
+                Fleet
+            **/
             .yourFleetQuickActions {
                 grid-column: span 4;
                 min-height: 300px;

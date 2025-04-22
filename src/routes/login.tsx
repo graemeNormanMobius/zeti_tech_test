@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
 import { Button } from "../components/button.tsx";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { CircularSpinningIcon, VisibilityIcon, VisibilityOffIcon, WarningTriangleIcon } from "../components/icons.tsx";
+import Cookies from "js-cookie";
 
 export function Login() {
     const navigate = useNavigate();
@@ -28,7 +28,6 @@ export function Login() {
 
     const onSubmit: SubmitHandler<{ email: string; password: string; }> = data => {
         setLoading(true);
-        // handleLogin(data);
 
         fetch("/api/users")
             .then((response) => response.json())
@@ -51,31 +50,10 @@ export function Login() {
             });
     };
 
-    // function handleLogin(data: { email: string; password: string }) {
-    //     fetch("/api/users")
-    //         .then((response) => response.json())
-    //         .then((users) => {
-    //             const user = users.find(
-    //                 (u: any) => u.email === data.email && u.password === data.password
-    //             );
-    //             if (user) {
-    //                 const { password, ...userWithoutPassword } = user;
-    //                 Cookies.set('userIdentity', JSON.stringify(userWithoutPassword), { expires: 7 })
-    //
-    //                 if (Cookies.get('userIdentity') !== undefined) {
-    //                     navigate('/');
-    //                 }
-    //             } else {
-    //                 alert("Invalid credentials");
-    //             }
-    //         });
-    // }
-
     return (
         <div className="gridContainer">
             <div className='mcCard backgroundFadedBoxShadow spacing-md login'>
                 <div className="standardCard">
-
                     <form className="signInForm customForm" onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-group">
                             <label className="form-label bodyXSmallEmp" htmlFor="email">

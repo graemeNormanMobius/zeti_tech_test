@@ -52,7 +52,7 @@ export function WelcomeSummary() {
                             fixedWidth={100}
                         />
                     ) : (
-                        <div className="bodySmall">Fleet: {vehicles ? vehicles.length + ' vehicles' : '-'} </div>
+                        <div className="bodySmall">Fleet: {vehicles ? vehicles.length + ` ${vehicles.length > 1 ? ' vehicles' : 'vehicle'}` : '-'} </div>
                     )}
                     {loading ? (
                         <LoadingAnimation

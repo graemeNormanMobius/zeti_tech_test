@@ -89,24 +89,17 @@ describe('calculateMileageAndCostToDate', () => {
         const result: any = calculateMileageAndCostToDate(vehicleListOneTimestamp, vehicleListTwoTimestamp);
 
         expect(result).toHaveLength(2);
-        // expect(result[0].state.milesThisCalendarMonth).toBe(2000); // (321868 - 160934) / 1609.34 ≈ 100
-        // expect(result[0].state.costThisCalendarMonth).toBe(414);
     });
 
     it('should correctly calculate the total miles travelled from vehicles odometer', () => {
         const result: any = calculateMileageAndCostToDate(vehicleListOneTimestamp, vehicleListTwoTimestamp);
 
-        // expect(result).toHaveLength(2);
-        expect(result[0].state.milesThisCalendarMonth).toBe(2000); // (321868 - 160934) / 1609.34 ≈ 100
-        // expect(result[0].state.costThisCalendarMonth).toBe(414);
-
+        expect(result[0].state.milesThisCalendarMonth).toBe(2000);
     })
 
     it('should correctly calculate the total cost based on total miles travelled from vehicles odometer', () => {
         const result: any = calculateMileageAndCostToDate(vehicleListOneTimestamp, vehicleListTwoTimestamp);
 
-        // expect(result).toHaveLength(2);
-        // expect(result[0].state.milesThisCalendarMonth).toBe(2000); // (321868 - 160934) / 1609.34 ≈ 100
         expect(result[0].state.costThisCalendarMonth).toBe(414);
     })
 });

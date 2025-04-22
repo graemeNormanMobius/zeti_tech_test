@@ -4,8 +4,11 @@ import { useModal } from "../../context/modalContext.tsx";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { pdf } from "@react-pdf/renderer";
 import { MyDocument } from "../billingHistory/invoicePDF.tsx";
+import {useVehicles} from "../../context/vehicleContext.tsx";
+import {getTodayAsISODate} from "../../utils/utils.tsx";
 
 export function QuickActionGenerateInvoice() {
+    const { vehicles, fleetMonthlyCost } = useVehicles();
     const { hideModal } = useModal();
     enum InvoiceEnum {
         Feb_21 = "February 2021",
@@ -27,36 +30,25 @@ export function QuickActionGenerateInvoice() {
         defaultValues: preloadedValues
     });
 
-    const onSubmit: SubmitHandler<{ invoicePeriod: InvoiceEnum }> = data => {
-        console.log("submit", data);
+    const onSubmit: SubmitHandler<{ invoicePeriod: InvoiceEnum }> = () => {
         generatePDF();
-
     };
 
     const generatePDF = () => {
-        pdf(<MyDocument />)
+        const pdfName: string = `bills-taxi-${getTodayAsISODate()}`;
+        pdf(<MyDocument invoiceData={vehicles} invoiceTotal={fleetMonthlyCost} />)
             .toBlob()
             .then((blob) => {
                 const url = URL.createObjectURL(blob);
                 const link = document.createElement('a');
                 link.href = url;
-                link.download = 'example.pdf';
+                link.download = `${pdfName}.pdf`;
                 link.click();
             })
             .catch((err) => {
-                console.error('Error generating PDF:', err);
+                throw new Error('Error generating PDF: ' + err);
             });
     }
-
-    // const generatePDF = async () => {
-    //     const blob = await pdf(<MyDocument />).toBlob();
-    //     const url = URL.createObjectURL(blob);
-    //
-    //     const link = document.createElement('a');
-    //     link.href = url;
-    //     link.download = 'example.pdf';
-    //     link.click();
-    // };
 
     return (
         <ModalWindow
@@ -92,13 +84,6 @@ export function QuickActionGenerateInvoice() {
                         <option value="may_20" disabled={true}>May 2020</option>
                         <option value="apr_20" disabled={true}>April 2020</option>
                         <option value="mar_20" disabled={true}>March 2020</option>
-                        {/*{Object.values(IntensityEmissionsFactor).map((value, index) => {*/}
-                        {/*    return (*/}
-                        {/*        <option key={index} value={value}>*/}
-                        {/*            {capitaliseStrValue(value)}*/}
-                        {/*        </option>*/}
-                        {/*    );*/}
-                        {/*})}*/}
                     </select>
                 </div>
                 <div className="modalFooter modal-buttonGroup">
@@ -120,7 +105,6 @@ export function QuickActionGenerateInvoice() {
                         isSubmit={true}
                         value="Generate Invoice"
                     />
-
                 </div>
             </form>
         </ModalWindow>
